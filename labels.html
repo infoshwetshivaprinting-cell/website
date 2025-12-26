@@ -1,53 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <title>Labels & Stickers | Shwet Shiva Printing</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO -->
+<title>Custom Labels & Stickers | Product, Bottle, Jar & Packaging Labels</title>
+<meta name="description" content="High-quality printed stickers and labels for products, bottles, jars, packaging, branding, cosmetics, and more. Gloss, matte, waterproof & premium finish.">
+<meta name="keywords" content="label printing, stickers, product labels, packaging labels, bottle labels, waterproof labels, custom stickers">
+<link rel="canonical" href="https://www.shwetshivaprinting.com/labels">
+
+<!-- OG -->
+<meta property="og:title" content="Custom Labels & Stickers | Product, Bottle, Jar & Packaging Labels">
+<meta property="og:description" content="Premium waterproof and high-quality custom labels for all business needs.">
+<meta property="og:image" content="https://picsum.photos/1200/630?random=60">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Animations -->
+<style>
+    .fade-in { animation: fadeIn 1.2s ease-in-out; }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+    .slide-up { animation: slideUp 0.9s ease-out; }
+    @keyframes slideUp { from { transform:translateY(20px); opacity:0; }
+                         to { transform:translateY(0); opacity:1; } }
+
+    .zoom-hover:hover {
+        transform: scale(1.04);
+        transition: 0.35s ease;
+    }
+
+    .soft-hover:hover {
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        transition: 0.3s ease;
+    }
+</style>
 </head>
 
 <body class="bg-gray-50">
 
-<!-- NAVIGATION -->
+<!-- ===================================================
+ NAVIGATION
+==================================================== -->
+<header class="sticky top-0 bg-white shadow z-50">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
 
-<!-- HERO -->
-<section class="bg-pink-600 text-white py-24 text-center">
-    <h2 class="text-4xl font-bold">Custom Labels & Stickers</h2>
-    <p class="text-pink-100 mt-3">Waterproof | Glossy | Matte | Die-Cut Stickers</p>
-</section>
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                SS
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold">Shwet Shiva</h1>
+                <p class="text-sm text-gray-600 -mt-1">Printing Services</p>
+            </div>
+        </a>
 
-<!-- LABELS GRID -->
-<section class="container mx-auto px-4 py-16">
-    <h3 class="text-3xl font-bold mb-10">Sticker Types</h3>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 font-semibold">
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow hover:-translate-y-1 transition">
-            <img src="https://picsum.photos/400/300?label1" class="rounded-lg"/>
-            <h4 class="text-xl font-bold mt-4">Glossy Stickers</h4>
-            <p class="text-pink-700 font-bold">₹299 / 50 pcs</p>
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+
+            <div class="relative group cursor-pointer">
+                <span class="text-blue-600">Products</span>
+                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-48 p-3 space-y-2">
+                    <a href="business-cards.html" class="block hover:text-blue-600">Business Cards</a>
+                    <a href="brochures.html" class="block hover:text-blue-600">Brochures</a>
+                    <a href="banners.html" class="block hover:text-blue-600">Banners</a>
+                    <a href="packaging.html" class="block hover:text-blue-600">Packaging</a>
+                    <a href="labels.html" class="block font-semibold text-blue-600">Labels</a>
+                </div>
+            </div>
+
+            <a href="services.html" class="hover:text-blue-600">Services</a>
+
+            <div class="relative group cursor-pointer">
+                <span class="hover:text-blue-600">Company</span>
+                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-40 p-3 space-y-2">
+                    <a href="about.html" class="block hover:text-blue-600">About Us</a>
+                    <a href="contact.html" class="block hover:text-blue-600">Contact</a>
+                </div>
+            </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow hover:-translate-y-1 transition">
-            <img src="https://picsum.photos/400/300?label2" class="rounded-lg"/>
-            <h4 class="text-xl font-bold mt-4">Matte Stickers</h4>
-            <p class="text-pink-700 font-bold">₹349 / 50 pcs</p>
-        </div>
+        <!-- Mobile Menu -->
+        <button id="mobileBtn" class="md:hidden text-3xl">&#9776;</button>
+    </nav>
 
-        <div class="bg-white p-6 rounded-lg shadow hover:-translate-y-1 transition">
-            <img src="https://picsum.photos/400/300?label3" class="rounded-lg"/>
-            <h4 class="text-xl font-bold mt-4">Die-Cut Stickers</h4>
-            <p class="text-pink-700 font-bold">₹399 / 50 pcs</p>
-        </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow px-4 pb-4">
+        <a href="index.html" class="block py-2">Home</a>
+
+        <details class="py-2">
+            <summary class="cursor-pointer font-medium text-blue-600">Products</summary>
+            <div class="pl-4 space-y-1">
+                <a href="business-cards.html">Business Cards</a>
+                <a href="brochures.html">Brochures</a>
+                <a href="banners.html">Banners</a>
+                <a href="packaging.html">Packaging</a>
+                <a href="labels.html" class="font-semibold text-blue-600">Labels</a>
+            </div>
+        </details>
+
+        <a href="services.html" class="block py-2">Services</a>
+
+        <details class="py-2">
+            <summary class="cursor-pointer font-medium">Company</summary>
+            <div class="pl-4 space-y-1">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </details>
+    </div>
+</header>
+
+<script>
+document.getElementById("mobileBtn").onclick = () => {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+};
+</script>
+
+<!-- ===================================================
+ HERO
+==================================================== -->
+<section class="relative fade-in">
+    <img src="https://picsum.photos/1920/550?random=61"
+         class="w-full h-[420px] object-cover brightness-75">
+
+    <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center px-6">
+        <h2 class="text-5xl font-extrabold drop-shadow-lg slide-up">Custom Labels & Stickers</h2>
+        <p class="mt-4 text-lg max-w-2xl slide-up">
+            Create stunning, waterproof and durable labels for packaging, branding, bottles, jars and retail.
+        </p>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="py-16 bg-gray-900 text-center text-white">
-    <h3 class="text-3xl font-bold">Want Custom Shapes?</h3>
-    <a href="contact.html" class="inline-block mt-5 px-12 py-4 bg-pink-600 rounded-lg">
-        Send Your Sticker Design
+<!-- ===================================================
+ LABEL TYPES
+==================================================== -->
+<section class="container mx-auto px-6 py-16">
+
+    <h3 class="text-3xl font-bold fade-in text-center">Types of Labels We Print</h3>
+    <p class="text-center text-gray-600 mt-3 mb-10 fade-in">
+        From product labels to packaging stickers — we deliver premium quality that your customers will love.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+        <!-- Product Labels -->
+        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
+            <img src="https://picsum.photos/400/260?random=62"
+                 class="rounded-lg mb-4 zoom-hover">
+            <h4 class="text-xl font-semibold">Product Labels</h4>
+            <p class="text-gray-600 mt-2">Ideal for branding boxes, pouches, jars, bottles and retail products.</p>
+        </div>
+
+        <!-- Bottle & Jar Labels -->
+        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
+            <img src="https://picsum.photos/400/260?random=63"
+                 class="rounded-lg mb-4 zoom-hover">
+            <h4 class="text-xl font-semibold">Bottle & Jar Labels</h4>
+            <p class="text-gray-600 mt-2">Perfect waterproof labels for beverages, oils, cosmetics and food items.</p>
+        </div>
+
+        <!-- Packaging Stickers -->
+        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
+            <img src="https://picsum.photos/400/260?random=64"
+                 class="rounded-lg mb-4 zoom-hover">
+            <h4 class="text-xl font-semibold">Packaging Stickers</h4>
+            <p class="text-gray-600 mt-2">Custom stickers ideal for parcels, branding, sealing and promotions.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================================================
+ CTA
+==================================================== -->
+<section class="bg-blue-600 text-white py-14 text-center slide-up">
+    <h3 class="text-3xl font-bold">Need Custom Labels?</h3>
+    <p class="mt-3 text-lg">We print labels in any size, shape and quantity — fully personalized for your brand.</p>
+
+    <a href="contact.html"
+       class="mt-6 inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-bold shadow-md hover:bg-gray-200">
+       Contact Us
     </a>
 </section>
+
+<!-- ===================================================
+ FOOTER
+==================================================== -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <div>
+            <h4 class="text-xl font-bold mb-3">Shwet Shiva Printing</h4>
+            <p>Premium printing services with fast delivery & top quality.</p>
+        </div>
+
+        <div>
+            <h4 class="text-xl font-bold mb-3">Products</h4>
+            <ul class="space-y-1">
+                <li><a href="business-cards.html" class="hover:text-white">Business Cards</a></li>
+                <li><a href="brochures.html" class="hover:text-white">Brochures</a></li>
+                <li><a href="banners.html" class="hover:text-white">Banners</a></li>
+                <li><a href="packaging.html" class="hover:text-white">Packaging</a></li>
+                <li><a href="labels.html" class="hover:text-white">Labels</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="text-xl font-bold mb-3">Contact</h4>
+            <p>Email: support@shwetshivaprinting.com</p>
+            <p>Phone: +91 98765 43210</p>
+        </div>
+
+    </div>
+</footer>
 
 </body>
 </html>
