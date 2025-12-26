@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Shwet Shiva Printing Services – Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+
+<!-- ================= NAVIGATION ================= -->
+<header class="sticky top-0 z-50 bg-white shadow">
+    <nav class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                    <i class="fas fa-print text-white text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold">Shwet Shiva</h1>
+                    <p class="text-sm text-gray-600">Printing Services</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+
+                <div class="relative group">
+                    <button class="hover:text-blue-600">Products</button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-md rounded-lg p-4 w-48">
+                        <a href="business-cards.html" class="block py-1 hover:text-blue-600">Business Cards</a>
+                        <a href="brochures.html" class="block py-1 hover:text-blue-600">Brochures</a>
+                        <a href="banners.html" class="block py-1 hover:text-blue-600">Banners</a>
+                        <a href="packaging.html" class="block py-1 hover:text-blue-600">Packaging</a>
+                        <a href="labels.html" class="block py-1 hover:text-blue-600">Labels</a>
+                    </div>
+                </div>
+
+                <a href="services.html" class="hover:text-blue-600">Services</a>
+
+                <div class="relative group">
+                    <button class="hover:text-blue-600">Company</button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-md rounded-lg p-4 w-48">
+                        <a href="about.html" class="block py-1 hover:text-blue-600">About Us</a>
+                        <a href="contact.html" class="block py-1 hover:text-blue-600">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <button id="mobileBtn" class="md:hidden text-3xl">☰</button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4">
+            <a href="index.html" class="block py-2">Home</a>
+
+            <details class="py-2">
+                <summary class="cursor-pointer">Products</summary>
+                <div class="pl-4 space-y-1">
+                    <a href="business-cards.html" class="block">Business Cards</a>
+                    <a href="brochures.html" class="block">Brochures</a>
+                    <a href="banners.html" class="block">Banners</a>
+                    <a href="packaging.html" class="block">Packaging</a>
+                    <a href="labels.html" class="block">Labels</a>
+                </div>
+            </details>
+
+            <a href="services.html" class="block py-2">Services</a>
+            <a href="about.html" class="block py-2">About Us</a>
+            <a href="contact.html" class="block py-2">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="bg-blue-600 text-white py-24 text-center">
+    <h2 class="text-5xl font-extrabold">Premium Printing For Your Business</h2>
+    <p class="mt-4 text-xl text-blue-100 max-w-3xl mx-auto">
+        High-quality printing services designed to make your brand look professional.
+    </p>
+    <div class="mt-6 flex justify-center space-x-4">
+        <a href="products.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold">Explore Products</a>
+        <a href="contact.html" class="border border-white px-8 py-3 rounded-lg font-bold">Get Quote</a>
+    </div>
+</section>
+
+<!-- ================= CATEGORY GRID ================= -->
+<section class="py-16 container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center">Popular Categories</h3>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+        <div class="p-6 bg-white shadow rounded-lg text-center hover:-translate-y-1 transition">
+            <i class="fas fa-id-card text-4xl text-blue-600"></i>
+            <p class="mt-4 font-medium">Business Cards</p>
+        </div>
+
+        <div class="p-6 bg-white shadow rounded-lg text-center hover:-translate-y-1 transition">
+            <i class="far fa-newspaper text-4xl text-blue-600"></i>
+            <p class="mt-4 font-medium">Brochures</p>
+        </div>
+
+        <div class="p-6 bg-white shadow rounded-lg text-center hover:-translate-y-1 transition">
+            <i class="fas fa-flag text-4xl text-blue-600"></i>
+            <p class="mt-4 font-medium">Banners</p>
+        </div>
+
+        <div class="p-6 bg-white shadow rounded-lg text-center hover:-translate-y-1 transition">
+            <i class="fas fa-box text-4xl text-blue-600"></i>
+            <p class="mt-4 font-medium">Packaging</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="py-20 bg-gray-900 text-white text-center">
+    <h3 class="text-4xl font-bold">Need a Custom Printing Solution?</h3>
+    <p class="mt-4 max-w-2xl mx-auto text-gray-300">
+        Contact us for bulk orders, custom designs, and special print sizes.
+    </p>
+    <a href="contact.html"
+       class="mt-6 inline-block px-10 py-4 bg-blue-600 rounded-lg font-bold hover:bg-blue-700">
+       Contact Us
+    </a>
+</section>
+
+<script>
+document.getElementById("mobileBtn").onclick = function() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+};
+</script>
+
+</body>
+</html>
