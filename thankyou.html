@@ -2,45 +2,33 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Thank You | Shwet Shiva Printing Services</title>
+    <!-- SEO -->
+    <title>Thank You | Shwet Shiva Printing Services</title>
+    <meta name="description" content="Thank you for contacting Shwet Shiva Printing Services. We will get back to you shortly.">
+    <link rel="canonical" href="https://infoshwetshivaprinting-cell.github.io/website/thankyou.html">
 
-<!-- SEO -->
-<meta name="description" content="Thank you for contacting Shwet Shiva Printing Services. We have received your message and will get back to you shortly.">
-<meta name="keywords" content="printing services, print shop, printing support, contact printing company, custom printing India">
-<link rel="canonical" href="https://infoshwetshivaprinting-cell.github.io/website/thankyou.html">
+    <!-- OG Tags -->
+    <meta property="og:title" content="Thank You | Shwet Shiva Printing Services">
+    <meta property="og:description" content="Your message has been submitted successfully.">
+    <meta property="og:image" content="https://picsum.photos/1200/630?random=92">
+    <meta property="og:type" content="website">
 
-<!-- OG Tags (Facebook, LinkedIn, WhatsApp Preview) -->
-<meta property="og:title" content="Thank You | Shwet Shiva Printing Services">
-<meta property="og:description" content="Your message has been successfully submitted. Our team will contact you soon.">
-<meta property="og:image" content="https://picsum.photos/1200/630?random=432">
-<meta property="og:url" content="https://infoshwetshivaprinting-cell.github.io/website/thankyou.html">
-<meta property="og:type" content="website">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in { animation: fadeIn 1.2s ease-in-out; }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-<!-- Animations -->
-<style>
-    .fade-in { animation: fadeIn 1.2s ease-in-out; }
-    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-    .slide-up { animation: slideUp 0.9s ease-out; }
-    @keyframes slideUp { from { transform:translateY(25px); opacity:0; }
-                         to { transform:translateY(0); opacity:1; } }
-
-    .zoom-hover:hover { transform: scale(1.03); transition: 0.35s ease; }
-
-    .hero-bg {
-        background-image: url('https://picsum.photos/1920/550?random=92');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-</style>
-
+        .slide-up { animation: slideUp 1s ease-out; }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50">
@@ -51,7 +39,6 @@
 <header class="sticky top-0 bg-white shadow z-50">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
 
-        <!-- Logo -->
         <a href="index.html" class="flex items-center space-x-3">
             <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
                 SS
@@ -62,9 +49,7 @@
             </div>
         </a>
 
-        <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 font-semibold">
-
             <a href="index.html" class="hover:text-blue-600">Home</a>
 
             <div class="relative group cursor-pointer">
@@ -89,7 +74,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <button id="mobileBtn" class="md:hidden text-3xl">&#9776;</button>
     </nav>
 
@@ -126,32 +110,38 @@ document.getElementById("mobileBtn").onclick = () => {
 </script>
 
 <!-- ===================================================
- HERO SECTION (Matching Contact Page)
+ HERO (same style as Contact Page)
 ==================================================== -->
 <section class="relative fade-in">
-    <div class="hero-bg w-full h-[350px] flex items-center justify-center text-white text-center px-6 brightness-75"></div>
+    <img src="https://picsum.photos/1920/450?random=95"
+         class="w-full h-[350px] object-cover brightness-75">
 
     <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center px-6">
         <h2 class="text-5xl font-extrabold drop-shadow-lg slide-up">Thank You</h2>
-        <p class="mt-4 text-lg max-w-xl slide-up">We appreciate your message — our team will get back to you soon.</p>
+        <p class="mt-4 text-lg max-w-2xl slide-up opacity-90">
+            We appreciate your message. Our team will contact you shortly.
+        </p>
     </div>
 </section>
 
 <!-- ===================================================
- THANK YOU MESSAGE BOX
+ MAIN SUCCESS CARD
 ==================================================== -->
-<section class="flex items-center justify-center py-16 px-6 fade-in">
-    <div class="bg-white shadow-xl rounded-2xl p-10 max-w-xl text-center slide-up">
+<section class="py-20 flex justify-center px-4 fade-in">
+    <div class="bg-white p-10 rounded-2xl shadow-xl max-w-3xl text-center slide-up">
 
-        <div class="text-green-600 text-6xl font-bold mb-4">✔</div>
+        <div class="text-6xl mb-6 text-blue-600">✔</div>
 
-        <h1 class="text-3xl font-extrabold text-blue-700">Message Submitted Successfully!</h1>
-        <p class="mt-4 text-gray-700 text-lg">
+        <h3 class="text-3xl font-bold text-blue-700 mb-2">
+            Message Submitted Successfully!
+        </h3>
+
+        <p class="text-gray-700 text-lg mb-8">
             We’ve received your inquiry and will respond shortly.
         </p>
 
         <a href="index.html"
-           class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold shadow-md">
+           class="px-8 py-3 bg-blue-600 text-white rounded-lg font-bold shadow hover:bg-blue-700 transition">
            Return to Home
         </a>
     </div>
@@ -184,9 +174,9 @@ document.getElementById("mobileBtn").onclick = () => {
             <p>Email: infoshwetshivaprinting@gmail.com</p>
             <p>Phone: +91 80872 20081</p>
         </div>
-
     </div>
 </footer>
 
 </body>
 </html>
+
