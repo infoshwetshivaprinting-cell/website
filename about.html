@@ -40,24 +40,19 @@
 ==================================================== -->
 <header class="sticky top-0 bg-white shadow z-50">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-
-        <!-- Logo -->
         <a href="index.html" class="flex items-center space-x-3">
-            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                SS
-            </div>
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">SS</div>
             <div>
                 <h1 class="text-2xl font-bold">Shwet Shiva</h1>
                 <p class="text-sm text-gray-600 -mt-1">Printing Services</p>
             </div>
         </a>
 
-        <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 font-semibold">
-
             <a href="index.html" class="hover:text-blue-600">Home</a>
 
-             <div class="relative group cursor-pointer">
+            <!-- Products Dropdown -->
+            <div class="relative group cursor-pointer">
                 <span class="text-blue-600">Products</span>
                 <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-56 p-3 space-y-2">
                     <a href="business-cards.html" class="block hover:text-blue-600">Business Cards</a>
@@ -76,17 +71,17 @@
 
             <div class="relative group cursor-pointer">
                 <span class="hover:text-blue-600">Company</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-40 p-3 space-y-2">
-                    <a href="about.html" class="block font-semibold text-blue-600">About Us</a>
+                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-44 p-3 space-y-2">
+                    <a href="about.html" class="block hover:text-blue-600">About Us</a>
                     <a href="contact.html" class="block hover:text-blue-600">Contact</a>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <button id="mobileBtn" class="md:hidden text-3xl">&#9776;</button>
     </nav>
 
+    <!-- Mobile -->
     <div id="mobileMenu" class="hidden md:hidden bg-white shadow px-4 pb-4">
         <a href="index.html" class="block py-2">Home</a>
 
@@ -98,6 +93,9 @@
                 <a href="banners.html">Banners</a>
                 <a href="packaging.html">Packaging</a>
                 <a href="labels.html">Labels</a>
+                <a href="wedding-cards.html">Wedding Cards</a>
+                <a href="invitation-cards.html">Invitation Cards</a>
+                <a href="office-binding.html">Office Binding</a>
             </div>
         </details>
 
@@ -106,7 +104,7 @@
         <details class="py-2">
             <summary class="cursor-pointer font-medium">Company</summary>
             <div class="pl-4 space-y-1">
-                <a href="about.html" class="font-semibold text-blue-600">About Us</a>
+                <a href="about.html">About Us</a>
                 <a href="contact.html">Contact</a>
             </div>
         </details>
