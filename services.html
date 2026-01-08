@@ -40,7 +40,7 @@
 </head>
 <body>
 
-<header class="sticky top-0 z-[100] bg-slate-900/80 backdrop-blur-lg border-b border-white/10">
+<header class="sticky top-0 z-[100] bg-slate-900/90 backdrop-blur-lg border-b border-white/10">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="flex items-center space-x-3">
             <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-blue-600/20">SS</div>
@@ -55,15 +55,21 @@
             
             <div class="relative group cursor-pointer">
                 <span class="hover:text-white flex items-center gap-1">Products <i class="fas fa-chevron-down text-[10px]"></i></span>
-                <div class="absolute hidden group-hover:block top-full left-0 bg-slate-800 border border-white/10 shadow-2xl rounded-xl w-56 p-3 mt-2 space-y-1">
-                    <a href="business-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition">Business Cards</a>
-                    <a href="brochures.html" class="block p-2 hover:bg-white/5 rounded-lg transition">Brochures</a>
-                    <a href="packaging.html" class="block p-2 hover:bg-white/5 rounded-lg transition">Packaging</a>
-                    <a href="wedding-cards.html" class="block p-2 text-blue-400 font-bold hover:bg-white/5 rounded-lg transition">Wedding Cards</a>
+                <div class="absolute hidden group-hover:block top-full left-0 bg-slate-800 border border-white/10 shadow-2xl rounded-xl w-64 p-3 mt-2 grid grid-cols-1 gap-1">
+                    <a href="business-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs">Business Cards</a>
+                    <a href="brochures.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs">Brochures</a>
+                    <a href="banners.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs">Banners</a>
+                    <a href="packaging.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs">Packaging</a>
+                    <a href="labels.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs">Labels</a>
+                    <hr class="border-white/5 my-1">
+                    <a href="wedding-cards.html" class="block p-2 text-blue-400 font-bold hover:bg-white/5 rounded-lg transition text-xs">Wedding Cards</a>
+                    <a href="invitation-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs">Invitation Cards</a>
+                    <a href="office-binding.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs">Office Binding</a>
                 </div>
             </div>
 
             <a href="services.html" class="hover:text-white transition">Services</a>
+            <a href="about.html" class="hover:text-white transition">About</a>
             <a href="contact.html" class="hover:text-white transition">Contact</a>
         </div>
 
@@ -72,27 +78,35 @@
         </button>
     </nav>
 
-    <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-t border-white/10 px-6 py-8 space-y-6 absolute w-full left-0 shadow-2xl">
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-t border-white/10 px-6 py-8 space-y-6 absolute w-full left-0 shadow-2xl max-h-[90vh] overflow-y-auto">
         <a href="index.html" class="block text-xl font-semibold text-white">Home</a>
         
         <div class="space-y-4">
-            <p class="text-xs font-bold text-blue-500 uppercase tracking-widest">Our Products</p>
-            <div class="grid grid-cols-2 gap-4">
+            <p class="text-xs font-bold text-blue-500 uppercase tracking-widest">Full Product Range</p>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-3">
                 <a href="business-cards.html" class="text-gray-400 text-sm">Business Cards</a>
-                <a href="wedding-cards.html" class="text-gray-400 text-sm">Wedding Cards</a>
-                <a href="packaging.html" class="text-gray-400 text-sm">Packaging</a>
+                <a href="brochures.html" class="text-gray-400 text-sm">Brochures</a>
                 <a href="banners.html" class="text-gray-400 text-sm">Banners</a>
+                <a href="packaging.html" class="text-gray-400 text-sm">Packaging</a>
+                <a href="labels.html" class="text-gray-400 text-sm">Labels</a>
+                <a href="wedding-cards.html" class="text-blue-400 text-sm font-bold">Wedding Cards</a>
+                <a href="invitation-cards.html" class="text-gray-400 text-sm">Invitation Cards</a>
+                <a href="office-binding.html" class="text-gray-400 text-sm">Office Binding</a>
             </div>
         </div>
 
-        <a href="services.html" class="block text-xl font-semibold text-white">Services</a>
-        <a href="contact.html" class="block text-xl font-semibold text-white">Contact</a>
+        <div class="flex flex-col space-y-4 pt-4 border-t border-white/5">
+            <a href="services.html" class="text-lg font-semibold text-white">Services</a>
+            <a href="about.html" class="text-lg font-semibold text-white">About Us</a>
+            <a href="contact.html" class="text-lg font-semibold text-white">Contact</a>
+        </div>
         
-        <a href="https://wa.me/918087220081" class="block w-full bg-blue-600 text-white text-center py-4 rounded-xl font-bold">
-            Get a Quote
+        <a href="https://wa.me/918087220081" class="block w-full bg-blue-600 text-white text-center py-4 rounded-xl font-bold shadow-lg shadow-blue-600/30">
+            WhatsApp Quote
         </a>
     </div>
 </header>
+
 
 <script>
     const mobileBtn = document.getElementById('mobileBtn');
