@@ -1,231 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Brochures & Flyers | Shwet Shiva Printing</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- SEO -->
-<title>Brochures & Flyers Printing | Tri-fold, Bi-fold, Z-fold</title>
-<meta name="description" content="High-quality brochure printing including tri-fold, bi-fold, Z-fold, and custom designs. Perfect for marketing, promotions, and branding. Premium paper and vibrant color prints.">
-<meta name="keywords" content="brochure printing, flyer printing, tri-fold brochure, bi-fold brochure, Z-fold leaflet, marketing flyers, corporate brochures">
-<link rel="canonical" href="https://www.shwetshivaprinting.com/brochures">
-
-<!-- OG -->
-<meta property="og:title" content="Brochures & Flyers Printing | Tri-fold, Bi-fold, Z-fold">
-<meta property="og:description" content="High-quality brochures & flyers with professional printing, vivid colors, and premium finishes.">
-<meta property="og:image" content="https://picsum.photos/1200/630?random=30">
-
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Animations -->
-<style>
-    .fade-in { animation: fadeIn 1.2s ease-in-out; }
-    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-    .slide-up { animation: slideUp 0.9s ease-out; }
-    @keyframes slideUp { from { transform:translateY(20px); opacity:0; }
-                         to { transform:translateY(0); opacity:1; } }
-
-    .zoom-hover:hover {
-        transform: scale(1.04);
-        transition: 0.35s ease;
-    }
-
-    .soft-hover:hover {
-        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        transition: 0.3s ease;
-    }
-</style>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark-bg: #0f172a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        input, select {
+            background: rgba(0,0,0,0.3) !important;
+            border: 1px solid var(--glass-border) !important;
+            color: white !important;
+        }
+        .fold-option input:checked + .fold-content {
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.1);
+        }
+    </style>
 </head>
+<body>
 
-<body class="bg-gray-50">
-
-<!-- ===================================================
- NAVIGATION (Same as previous pages)
-==================================================== -->
-<header class="sticky top-0 bg-white shadow z-50">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center space-x-3">
-            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">SS</div>
-            <div>
-                <h1 class="text-2xl font-bold">Shwet Shiva</h1>
-                <p class="text-sm text-gray-600 -mt-1">Printing Services</p>
-            </div>
-        </a>
-
-        <div class="hidden md:flex space-x-8 font-semibold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-
-            <!-- Products Dropdown -->
-            <div class="relative group cursor-pointer">
-                <span class="text-blue-600">Products</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-56 p-3 space-y-2">
-                    <a href="business-cards.html" class="block hover:text-blue-600">Business Cards</a>
-                    <a href="brochures.html" class="block hover:text-blue-600">Brochures</a>
-                    <a href="banners.html" class="block hover:text-blue-600">Banners</a>
-                    <a href="packaging.html" class="block hover:text-blue-600">Packaging</a>
-                    <a href="labels.html" class="block hover:text-blue-600">Labels</a>
-                    <hr>
-                    <a href="wedding-cards.html" class="block font-semibold text-blue-600">Wedding Cards</a>
-                    <a href="invitation-cards.html" class="block hover:text-blue-600">Invitation Cards</a>
-                    <a href="office-binding.html" class="block hover:text-blue-600">Office Binding</a>
-                </div>
-            </div>
-
-            <a href="services.html" class="hover:text-blue-600">Services</a>
-
-            <div class="relative group cursor-pointer">
-                <span class="hover:text-blue-600">Company</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-44 p-3 space-y-2">
-                    <a href="about.html" class="block hover:text-blue-600">About Us</a>
-                    <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-                </div>
-            </div>
-        </div>
-
-        <button id="mobileBtn" class="md:hidden text-3xl">&#9776;</button>
-    </nav>
-
-    <!-- Mobile -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow px-4 pb-4">
-        <a href="index.html" class="block py-2">Home</a>
-
-        <details class="py-2">
-            <summary class="cursor-pointer font-medium text-blue-600">Products</summary>
-            <div class="pl-4 space-y-1">
-                <a href="business-cards.html">Business Cards</a>
-                <a href="brochures.html">Brochures</a>
-                <a href="banners.html">Banners</a>
-                <a href="packaging.html">Packaging</a>
-                <a href="labels.html">Labels</a>
-                <a href="wedding-cards.html">Wedding Cards</a>
-                <a href="invitation-cards.html">Invitation Cards</a>
-                <a href="office-binding.html">Office Binding</a>
-            </div>
-        </details>
-
-        <a href="services.html" class="block py-2">Services</a>
-
-        <details class="py-2">
-            <summary class="cursor-pointer font-medium">Company</summary>
-            <div class="pl-4 space-y-1">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </details>
-    </div>
-</header>
-<script>
-document.getElementById("mobileBtn").onclick = () => {
-    document.getElementById("mobileMenu").classList.toggle("hidden");
-};
-</script>
-
-
-<!-- ===================================================
- HERO
-==================================================== -->
-<section class="relative fade-in">
-    <img src="https://picsum.photos/1920/550?random=31"
-         class="w-full h-[420px] object-cover brightness-75">
-
-    <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center px-6">
-        <h2 class="text-5xl font-extrabold drop-shadow-lg slide-up">
-            Brochures & Flyers
-        </h2>
-        <p class="mt-4 text-lg max-w-2xl slide-up">
-            Professional brochures designed to elevate your marketing and capture customer attention.
-        </p>
-    </div>
-</section>
-
-<!-- ===================================================
- BROCHURE STYLES
-==================================================== -->
-<section class="container mx-auto px-6 py-16">
-
-    <h3 class="text-3xl font-bold fade-in text-center">Brochure Types</h3>
-    <p class="text-center text-gray-600 mt-3 mb-10 fade-in">
-        Choose from our most popular folding styles and premium finishes.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-10">
-
-        <!-- Tri-fold -->
-        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=32"
-                 class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Tri-fold Brochures</h4>
-            <p class="text-gray-600 mt-2">Perfect for marketing and information-rich layouts.</p>
-        </div>
-
-        <!-- Bi-fold -->
-        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=33"
-                 class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Bi-fold Brochures</h4>
-            <p class="text-gray-600 mt-2">Clean and professional design format for presentations.</p>
-        </div>
-
-        <!-- Z-fold -->
-        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=34"
-                 class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Z-fold Brochures</h4>
-            <p class="text-gray-600 mt-2">Stylish layout with smooth flow of content panels.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- ===================================================
- CTA STRIP
-==================================================== -->
-<section class="bg-blue-600 text-white py-14 text-center slide-up">
-    <h3 class="text-3xl font-bold">Want Custom Brochures?</h3>
-    <p class="mt-3 text-lg">We create completely personalized designs that match your brand.</p>
-
-    <a href="contact.html"
-       class="mt-6 inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-bold shadow-md hover:bg-gray-200">
-       Contact Us
+<nav class="sticky top-0 z-50 glass-card mx-4 mt-4 px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold">SS</div>
+        <span class="text-xl font-extrabold tracking-tight">Shwet Shiva</span>
     </a>
+    <div class="hidden md:flex space-x-8 font-medium">
+        <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+        <a href="office-binding.html" class="hover:text-blue-400 transition">Services</a>
+        <a href="about.html" class="hover:text-blue-400 transition text-blue-400">Our Story</a>
+        <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+    </div>
+    <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+</nav>
+
+<section class="py-20 px-6 text-center">
+    <span class="text-blue-500 font-bold tracking-widest uppercase text-sm">Marketing Essentials</span>
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-gradient">Brochures & Flyers</h1>
+    <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+        Tell your brand story with premium paper, vivid colors, and professional folding styles.
+    </p>
 </section>
 
-<!-- ===================================================
- FOOTER
-==================================================== -->
-<footer class="bg-gray-900 text-gray-300 py-10">
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
+<section class="container mx-auto px-6 mb-24">
+    <div class="grid lg:grid-cols-3 gap-8">
+        
+        <div class="lg:col-span-2 space-y-8">
+            <div class="glass-card p-8">
+                <h3 class="text-xl font-bold mb-6">1. Choose Your Fold Style</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <label class="fold-option cursor-pointer">
+                        <input type="radio" name="fold" value="Single Sheet/Flyer" class="hidden" checked>
+                        <div class="fold-content border border-white/10 p-4 rounded-xl text-center transition">
+                            <i class="fas fa-file text-2xl mb-2 text-blue-400"></i>
+                            <p class="text-xs font-bold">Flyer</p>
+                        </div>
+                    </label>
+                    <label class="fold-option cursor-pointer">
+                        <input type="radio" name="fold" value="Bi-Fold" class="hidden">
+                        <div class="fold-content border border-white/10 p-4 rounded-xl text-center transition">
+                            <i class="fas fa-book-open text-2xl mb-2 text-blue-400"></i>
+                            <p class="text-xs font-bold">Bi-Fold</p>
+                        </div>
+                    </label>
+                    <label class="fold-option cursor-pointer">
+                        <input type="radio" name="fold" value="Tri-Fold" class="hidden">
+                        <div class="fold-content border border-white/10 p-4 rounded-xl text-center transition">
+                            <i class="fas fa-columns text-2xl mb-2 text-blue-400"></i>
+                            <p class="text-xs font-bold">Tri-Fold</p>
+                        </div>
+                    </label>
+                    <label class="fold-option cursor-pointer">
+                        <input type="radio" name="fold" value="Z-Fold" class="hidden">
+                        <div class="fold-content border border-white/10 p-4 rounded-xl text-center transition">
+                            <i class="fas fa-map text-2xl mb-2 text-blue-400"></i>
+                            <p class="text-xs font-bold">Z-Fold</p>
+                        </div>
+                    </label>
+                </div>
 
-        <div>
-            <h4 class="text-xl font-bold mb-3">Shwet Shiva Printing</h4>
-            <p>Premium printing services with fast delivery & top quality.</p>
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">Paper Quality</label>
+                        <select id="gsm" class="w-full p-4 rounded-xl outline-none">
+                            <option value="130 GSM Glossy">130 GSM Glossy (Standard)</option>
+                            <option value="170 GSM Premium">170 GSM Premium (Heavy)</option>
+                            <option value="300 GSM Art Card">300 GSM Art Card (Thick)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">Approx Quantity</label>
+                        <input type="number" id="qty" value="100" class="w-full p-4 rounded-xl outline-none" placeholder="Min 50">
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div>
-            <h4 class="text-xl font-bold mb-3">Products</h4>
-            <ul class="space-y-1">
-                <li><a href="business-cards.html" class="hover:text-white">Business Cards</a></li>
-                <li><a href="brochures.html" class="hover:text-white">Brochures</a></li>
-                <li><a href="banners.html" class="hover:text-white">Banners</a></li>
-                <li><a href="packaging.html" class="hover:text-white">Packaging</a></li>
-                <li><a href="labels.html" class="hover:text-white">Labels</a></li>
-                  <li><a href="wedding-cards.html" class="hover:text-white">Wedding Cards</a></li>
-                <li><a href="invitation-cards.html" class="hover:text-white">Invitation Cards</a></li>
-                <li><a href="office-binding.html" class="hover:text-white">Office Binding</a></li>
-            </ul>
-        </div>
+        <div class="glass-card p-8 h-fit lg:sticky lg:top-32">
+            <h3 class="text-xl font-bold mb-4">Print Summary</h3>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">Quotes for brochures depend on design complexity and bulk volume. Send us your requirements for an exact wholesale price.</p>
+            
+            <div class="space-y-4 mb-8">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Service:</span>
+                    <span class="text-white font-bold">Offset/Digital</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Colors:</span>
+                    <span class="text-white font-bold">CMYK Full Color</span>
+                </div>
+            </div>
 
-        <div>
-            <h4 class="text-xl font-bold mb-3">Contact</h4>
-           <p>Email: infoshwetshivaprinting@gmail.com</p>
-            <p>Phone: +91 80872 20081</p>
+            <button onclick="sendOrder()" class="w-full bg-blue-600 hover:bg-blue-700 p-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition transform hover:scale-105">
+                <i class="fab fa-whatsapp text-xl"></i> Get Price Quote
+            </button>
         </div>
+    </div>
+</section>
 
+<section class="container mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-10 text-center">Folding Styles Showcase</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card group overflow-hidden">
+            <img src="https://picsum.photos/600/400?tri-fold" class="w-full h-48 object-cover opacity-50 group-hover:opacity-100 transition duration-500">
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Corporate Tri-Folds</h3>
+                <p class="text-gray-400 mt-2 text-sm">6 panels of space. Ideal for service menus and product catalogs.</p>
+            </div>
+        </div>
+        <div class="glass-card group overflow-hidden">
+            <img src="https://picsum.photos/600/400?bifold" class="w-full h-48 object-cover opacity-50 group-hover:opacity-100 transition duration-500">
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Premium Bi-Folds</h3>
+                <p class="text-gray-400 mt-2 text-sm">The classic "book" style. Perfect for event invitations and company profiles.</p>
+            </div>
+        </div>
+        <div class="glass-card group overflow-hidden">
+            <img src="https://picsum.photos/600/400?flyer" class="w-full h-48 object-cover opacity-50 group-hover:opacity-100 transition duration-500">
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Promotional Flyers</h3>
+                <p class="text-gray-400 mt-2 text-sm">Single or double sided. High-impact for mass distribution.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="border-t border-gray-800 py-12 mt-24 bg-black/30">
+    <div class="container mx-auto px-6 text-center md:text-left grid md:grid-cols-3 gap-12 text-gray-400">
+        <div>
+            <h4 class="text-white font-bold mb-4">Shwet Shiva Printing</h4>
+            <p class="text-sm">Excellence in high-volume commercial printing since 2010.</p>
+        </div>
+        <div>
+            <h4 class="text-white font-bold mb-4">Other Services</h4>
+            <div class="flex flex-col gap-2 text-sm">
+                <a href="banners.html" class="hover:text-blue-500 transition">Banner Printing</a>
+                <a href="office-binding.html" class="hover:text-blue-500 transition">Office Binding</a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-white font-bold mb-4">Get Support</h4>
+            <p class="text-sm">infoshwetshivaprinting@gmail.com</p>
+            <p class="text-sm mt-2">+91 80872 20081</p>
+        </div>
     </div>
 </footer>
+
+<script>
+    function sendOrder() {
+        const fold = document.querySelector('input[name="fold"]:checked').value;
+        const gsm = document.getElementById('gsm').value;
+        const qty = document.getElementById('qty').value;
+        
+        const msg = `*Brochure Printing Inquiry*%0A---%0A*Fold Style:* ${fold}%0A*Paper:* ${gsm}%0A*Quantity:* ${qty}%0A---%0APlease provide a quote.`;
+        window.open(`https://wa.me/918087220081?text=${msg}`, '_blank');
+    }
+</script>
 
 </body>
 </html>
