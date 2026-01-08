@@ -1,208 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Shwet Shiva Printing</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- SEO -->
-<title>About Us | Shwet Shiva Printing Services</title>
-<meta name="description" content="Shwet Shiva Printing is a trusted printing company in India offering high-quality business cards, brochures, banners, packaging, and labels. Excellence in printing since 2010.">
-<meta name="keywords" content="about printing company, printing services india, premium printing, shwet shiva printing">
-<link rel="canonical" href="https://www.shwetshivaprinting.com/about">
-
-<!-- OG -->
-<meta property="og:title" content="About Us | Shwet Shiva Printing Services">
-<meta property="og:description" content="Trusted printing provider since 2010 offering business cards, brochures, banners, packaging & labels.">
-<meta property="og:image" content="https://picsum.photos/1200/630?random=80">
-
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Animations -->
-<style>
-.fade-in { animation: fadeIn 1.2s ease-in-out; }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-.slide-up { animation: slideUp 0.9s ease-out; }
-@keyframes slideUp { from { transform:translateY(20px); opacity:0; }
-                     to { transform:translateY(0); opacity:1; } }
-
-.zoom-hover:hover { transform: scale(1.04); transition: 0.35s ease; }
-.soft-hover:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.12); transition: 0.3s ease; }
-</style>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark-bg: #0f172a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link:hover { color: var(--primary); transition: 0.3s; }
+    </style>
 </head>
+<body>
 
-<body class="bg-gray-50">
-
-<!-- ===================================================
- NAVIGATION
-==================================================== -->
-<header class="sticky top-0 bg-white shadow z-50">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center space-x-3">
-            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">SS</div>
-            <div>
-                <h1 class="text-2xl font-bold">Shwet Shiva</h1>
-                <p class="text-sm text-gray-600 -mt-1">Printing Services</p>
-            </div>
-        </a>
-
-        <div class="hidden md:flex space-x-8 font-semibold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-
-            <!-- Products Dropdown -->
-            <div class="relative group cursor-pointer">
-                <span class="text-blue-600">Products</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-56 p-3 space-y-2">
-                    <a href="business-cards.html" class="block hover:text-blue-600">Business Cards</a>
-                    <a href="brochures.html" class="block hover:text-blue-600">Brochures</a>
-                    <a href="banners.html" class="block hover:text-blue-600">Banners</a>
-                    <a href="packaging.html" class="block hover:text-blue-600">Packaging</a>
-                    <a href="labels.html" class="block hover:text-blue-600">Labels</a>
-                    <hr>
-                    <a href="wedding-cards.html" class="block font-semibold text-blue-600">Wedding Cards</a>
-                    <a href="invitation-cards.html" class="block hover:text-blue-600">Invitation Cards</a>
-                    <a href="office-binding.html" class="block hover:text-blue-600">Office Binding</a>
-                </div>
-            </div>
-
-            <a href="services.html" class="hover:text-blue-600">Services</a>
-
-            <div class="relative group cursor-pointer">
-                <span class="hover:text-blue-600">Company</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-44 p-3 space-y-2">
-                    <a href="about.html" class="block hover:text-blue-600">About Us</a>
-                    <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-                </div>
-            </div>
-        </div>
-
-        <button id="mobileBtn" class="md:hidden text-3xl">&#9776;</button>
-    </nav>
-
-    <!-- Mobile -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow px-4 pb-4">
-        <a href="index.html" class="block py-2">Home</a>
-
-        <details class="py-2">
-            <summary class="cursor-pointer font-medium text-blue-600">Products</summary>
-            <div class="pl-4 space-y-1">
-                <a href="business-cards.html">Business Cards</a>
-                <a href="brochures.html">Brochures</a>
-                <a href="banners.html">Banners</a>
-                <a href="packaging.html">Packaging</a>
-                <a href="labels.html">Labels</a>
-                <a href="wedding-cards.html">Wedding Cards</a>
-                <a href="invitation-cards.html">Invitation Cards</a>
-                <a href="office-binding.html">Office Binding</a>
-            </div>
-        </details>
-
-        <a href="services.html" class="block py-2">Services</a>
-
-        <details class="py-2">
-            <summary class="cursor-pointer font-medium">Company</summary>
-            <div class="pl-4 space-y-1">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </details>
+<nav class="sticky top-0 z-50 glass-card mx-4 mt-4 px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold">SS</div>
+        <span class="text-xl font-extrabold tracking-tight">Shwet Shiva</span>
+    </a>
+    <div class="hidden md:flex space-x-8 font-medium">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="office-binding.html" class="nav-link text-blue-400">Services</a>
+        <a href="about.html" class="nav-link">Our Story</a>
+        <a href="contact.html" class="nav-link">Contact</a>
     </div>
-</header>
+    <a href="contact.html" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full text-sm font-bold transition">Get Quote</a>
+</nav>
 
-<script>
-document.getElementById("mobileBtn").onclick = () => {
-    document.getElementById("mobileMenu").classList.toggle("hidden");
-};
-</script>
-
-<!-- ===================================================
- HERO
-==================================================== -->
-<section class="relative fade-in">
-    <img src="https://picsum.photos/1920/550?random=81"
-         class="w-full h-[420px] object-cover brightness-75">
-
-    <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center px-6">
-        <h2 class="text-5xl font-extrabold drop-shadow-lg slide-up">
-            About Shwet Shiva Printing
-        </h2>
-        <p class="mt-4 text-lg max-w-2xl slide-up">
-            Trusted printing partner since 2010, delivering premium quality business, marketing, and branding materials across India.
+<section class="relative py-24 px-6 overflow-hidden">
+    <div class="container mx-auto text-center relative z-10">
+        <span class="text-blue-500 font-bold tracking-widest uppercase text-sm">Since 2010</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold mt-4 mb-6 text-gradient">Crafting Impressions<br>That Last Forever</h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            We don't just print paper; we build brand identities. From corporate documents to bespoke wedding cards, excellence is our standard.
         </p>
     </div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-blue-600/10 blur-[120px] -z-10"></div>
 </section>
 
-<!-- ===================================================
- COMPANY INFO
-==================================================== -->
-<section class="container mx-auto px-6 py-16">
-
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-
-        <div class="fade-in">
-            <h3 class="text-3xl font-bold mb-4">Who We Are</h3>
-            <p class="text-gray-700 leading-relaxed">
-                Shwet Shiva Printing is a professional printing company committed to providing high-quality services for businesses and individuals. From business cards to brochures, banners, packaging, and labels, we ensure every product is printed with care and precision.
-            </p>
-            <p class="text-gray-700 leading-relaxed mt-4">
-                Our mission is to deliver excellent printing solutions that enhance your brand image and create a lasting impression. With years of experience and a dedicated team, we make sure your projects are completed on time and to the highest standards.
-            </p>
+<div class="container mx-auto px-6 -mt-12 mb-24">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="glass-card p-8 text-center">
+            <h3 class="text-4xl font-extrabold text-blue-500">14+</h3>
+            <p class="text-gray-400 text-sm mt-2 uppercase tracking-wide">Years Experience</p>
         </div>
-
-        <div>
-            <img src="https://picsum.photos/600/400?random=82"
-                 class="rounded-lg shadow-lg slide-up zoom-hover">
+        <div class="glass-card p-8 text-center">
+            <h3 class="text-4xl font-extrabold text-blue-500">5k+</h3>
+            <p class="text-gray-400 text-sm mt-2 uppercase tracking-wide">Happy Clients</p>
         </div>
+        <div class="glass-card p-8 text-center">
+            <h3 class="text-4xl font-extrabold text-blue-500">1M+</h3>
+            <p class="text-gray-400 text-sm mt-2 uppercase tracking-wide">Prints Delivered</p>
+        </div>
+        <div class="glass-card p-8 text-center">
+            <h3 class="text-4xl font-extrabold text-blue-500">100%</h3>
+            <p class="text-gray-400 text-sm mt-2 uppercase tracking-wide">Quality Assured</p>
+        </div>
+    </div>
+</div>
 
+<section class="container mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative group">
+            <img src="https://picsum.photos/800/600?printing" class="rounded-[32px] grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" alt="Factory">
+            <div class="absolute -bottom-6 -right-6 bg-blue-600 p-8 rounded-3xl hidden md:block">
+                <i class="fas fa-quote-left text-3xl mb-4"></i>
+                <p class="font-semibold italic text-lg">Precision in every pixel.</p>
+            </div>
+        </div>
+        <div class="space-y-8">
+            <h2 class="text-4xl font-bold">The Shwet Shiva Way</h2>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 shrink-0 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">High-Tech Infrastructure</h4>
+                        <p class="text-gray-400">Utilizing the latest offset and digital printing machines for razor-sharp results.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 shrink-0 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Eco-Friendly Inks</h4>
+                        <p class="text-gray-400">Sustainable printing practices that protect the environment while staying vibrant.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 shrink-0 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Pan-India Delivery</h4>
+                        <p class="text-gray-400">Reliable logistics network ensuring your materials reach you safely, anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- ===================================================
- CTA
-==================================================== -->
-<section class="bg-blue-600 text-white py-16 text-center slide-up">
-    <h3 class="text-3xl font-bold">Want to Work With Us?</h3>
-    <p class="mt-3 text-lg">Get in touch for premium printing services tailored to your business needs.</p>
-
-    <a href="contact.html"
-       class="mt-6 inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-bold shadow-md hover:bg-gray-200">
-       Contact Us
-    </a>
+<section class="container mx-auto px-6 py-24 text-center">
+    <div class="glass-card p-12 overflow-hidden relative">
+        <h2 class="text-4xl font-bold mb-6">Ready to bring your ideas to life?</h2>
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">Get a custom quote within 2 hours. Our experts are ready to guide you on paper selection and design.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="contact.html" class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-200 transition">Talk to an Expert</a>
+            <a href="https://wa.me/918087220081" class="bg-[#25D366] text-white px-10 py-4 rounded-full font-bold hover:brightness-110 transition flex items-center justify-center gap-2">
+                <i class="fab fa-whatsapp"></i> Chat Now
+            </a>
+        </div>
+    </div>
 </section>
 
-<!-- ===================================================
- FOOTER
-==================================================== -->
-<footer class="bg-gray-900 text-gray-300 py-10">
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
-
+<footer class="border-t border-gray-800 py-12 mt-12 bg-black/30">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
         <div>
-            <h4 class="text-xl font-bold mb-3">Shwet Shiva Printing</h4>
-            <p>Premium printing services with fast delivery & top quality.</p>
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-xs">SS</div>
+                <span class="text-lg font-bold">Shwet Shiva</span>
+            </div>
+            <p class="text-gray-500">Premium Printing & Packaging solutions for modern brands.</p>
         </div>
-
         <div>
-            <h4 class="text-xl font-bold mb-3">Products</h4>
-            <ul class="space-y-1">
-                <li><a href="business-cards.html" class="hover:text-white">Business Cards</a></li>
-                <li><a href="brochures.html" class="hover:text-white">Brochures</a></li>
-                <li><a href="banners.html" class="hover:text-white">Banners</a></li>
-                <li><a href="packaging.html" class="hover:text-white">Packaging</a></li>
-                <li><a href="labels.html" class="hover:text-white">Labels</a></li>
-                <li><a href="wedding-cards.html" class="hover:text-white">Wedding Cards</a></li>
-                <li><a href="invitation-cards.html" class="hover:text-white">Invitation Cards</a></li>
-                <li><a href="office-binding.html" class="hover:text-white">Office Binding</a></li>
-           </ul>
+            <h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-blue-500">Quick Links</h4>
+            <ul class="space-y-3 text-gray-400">
+                <li><a href="office-binding.html" class="hover:text-white transition">Office Binding</a></li>
+                <li><a href="#" class="hover:text-white transition">Business Cards</a></li>
+                <li><a href="#" class="hover:text-white transition">Packaging</a></li>
+            </ul>
         </div>
-
         <div>
-            <h4 class="text-xl font-bold mb-3">Contact</h4>
-            <p>Email: infoshwetshivaprinting@gmail.com</p>
-            <p>Phone: +91 80872 20081</p>
+            <h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-blue-500">Contact Info</h4>
+            <p class="text-gray-400 mb-2"><i class="fas fa-envelope mr-2"></i> infoshwetshivaprinting@gmail.com</p>
+            <p class="text-gray-400"><i class="fas fa-phone mr-2"></i> +91 80872 20081</p>
         </div>
-
     </div>
 </footer>
 
