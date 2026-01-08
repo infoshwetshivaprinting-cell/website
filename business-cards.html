@@ -1,229 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Business Cards | Shwet Shiva Printing</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- SEO -->
-<title>Premium Business Cards Printing | Glossy, Matte, Textured</title>
-<meta name="description" content="Order high-quality business cards with glossy, matte, textured, and luxury finishes. Fast delivery, premium materials, and custom designs. Perfect for branding.">
-<meta name="keywords" content="business card printing, glossy business cards, matte business cards, textured visiting cards, premium business cards, custom visiting cards">
-<link rel="canonical" href="https://www.shwetshivaprinting.com/business-cards">
-
-<!-- OG -->
-<meta property="og:title" content="Premium Business Cards Printing | Glossy, Matte, Textured">
-<meta property="og:description" content="Premium business cards with luxury finishes. Glossy, matte, textured & custom designs. Fast delivery.">
-<meta property="og:image" content="https://picsum.photos/1200/630?random=20">
-
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Animations -->
-<style>
-    .fade-in { animation: fadeIn 1.2s ease-in-out; }
-    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-    .slide-up { animation: slideUp 0.9s ease-out; }
-    @keyframes slideUp { from { transform:translateY(20px); opacity:0; }
-                         to { transform:translateY(0); opacity:1; } }
-
-    .zoom-hover:hover {
-        transform: scale(1.04);
-        transition: 0.35s ease;
-    }
-
-    .soft-hover:hover {
-        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        transition: 0.3s ease;
-    }
-</style>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark-bg: #0f172a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        input, select {
+            background: rgba(0,0,0,0.3) !important;
+            border: 1px solid var(--glass-border) !important;
+            color: white !important;
+        }
+        .card-choice:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
+<body>
 
-<body class="bg-gray-50">
-
-<!-- ===================================================
- NAVIGATION (Same as index.html)
-==================================================== -->
-<header class="sticky top-0 bg-white shadow z-50">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center space-x-3">
-            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">SS</div>
-            <div>
-                <h1 class="text-2xl font-bold">Shwet Shiva</h1>
-                <p class="text-sm text-gray-600 -mt-1">Printing Services</p>
-            </div>
-        </a>
-
-        <div class="hidden md:flex space-x-8 font-semibold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-
-            <!-- Products Dropdown -->
-            <div class="relative group cursor-pointer">
-                <span class="text-blue-600">Products</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-56 p-3 space-y-2">
-                    <a href="business-cards.html" class="block hover:text-blue-600">Business Cards</a>
-                    <a href="brochures.html" class="block hover:text-blue-600">Brochures</a>
-                    <a href="banners.html" class="block hover:text-blue-600">Banners</a>
-                    <a href="packaging.html" class="block hover:text-blue-600">Packaging</a>
-                    <a href="labels.html" class="block hover:text-blue-600">Labels</a>
-                    <hr>
-                    <a href="wedding-cards.html" class="block font-semibold text-blue-600">Wedding Cards</a>
-                    <a href="invitation-cards.html" class="block hover:text-blue-600">Invitation Cards</a>
-                    <a href="office-binding.html" class="block hover:text-blue-600">Office Binding</a>
-                </div>
-            </div>
-
-            <a href="services.html" class="hover:text-blue-600">Services</a>
-
-            <div class="relative group cursor-pointer">
-                <span class="hover:text-blue-600">Company</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-44 p-3 space-y-2">
-                    <a href="about.html" class="block hover:text-blue-600">About Us</a>
-                    <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-                </div>
-            </div>
-        </div>
-
-        <button id="mobileBtn" class="md:hidden text-3xl">&#9776;</button>
-    </nav>
-
-    <!-- Mobile -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow px-4 pb-4">
-        <a href="index.html" class="block py-2">Home</a>
-
-        <details class="py-2">
-            <summary class="cursor-pointer font-medium text-blue-600">Products</summary>
-            <div class="pl-4 space-y-1">
-                <a href="business-cards.html">Business Cards</a>
-                <a href="brochures.html">Brochures</a>
-                <a href="banners.html">Banners</a>
-                <a href="packaging.html">Packaging</a>
-                <a href="labels.html">Labels</a>
-                <a href="wedding-cards.html">Wedding Cards</a>
-                <a href="invitation-cards.html">Invitation Cards</a>
-                <a href="office-binding.html">Office Binding</a>
-            </div>
-        </details>
-
-        <a href="services.html" class="block py-2">Services</a>
-
-        <details class="py-2">
-            <summary class="cursor-pointer font-medium">Company</summary>
-            <div class="pl-4 space-y-1">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </details>
-    </div>
-</header>
-<script>
-document.getElementById("mobileBtn").onclick = () => {
-    document.getElementById("mobileMenu").classList.toggle("hidden");
-};
-</script>
-
-<!-- ===================================================
- HERO
-==================================================== -->
-<section class="relative fade-in">
-    <img src="https://picsum.photos/1920/550?random=21"
-         class="w-full h-[420px] object-cover brightness-75">
-
-    <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center px-6">
-        <h2 class="text-5xl font-extrabold drop-shadow-lg slide-up">
-            Premium Business Cards
-        </h2>
-        <p class="mt-4 text-lg max-w-2xl slide-up">
-            Make a lasting first impression with high-quality, professionally designed business cards.
-        </p>
-    </div>
-</section>
-
-<!-- ===================================================
- PRODUCT DETAILS
-==================================================== -->
-<section class="container mx-auto px-6 py-16">
-
-    <h3 class="text-3xl font-bold fade-in text-center">Choose Your Style</h3>
-    <p class="text-center text-gray-600 mt-3 mb-10 fade-in">
-        Select from a range of finishes to match your brand identity.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-10">
-
-        <!-- Glossy -->
-        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=22"
-                 class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Glossy Finish</h4>
-            <p class="text-gray-600 mt-2">Bold, shiny and vibrant for attention-grabbing appeal.</p>
-        </div>
-
-        <!-- Matte -->
-        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=23"
-                 class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Matte Finish</h4>
-            <p class="text-gray-600 mt-2">Smooth, elegant and non-reflective for a premium look.</p>
-        </div>
-
-        <!-- Textured -->
-        <div class="bg-white rounded-xl shadow p-5 soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=24"
-                 class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Textured Cards</h4>
-            <p class="text-gray-600 mt-2">Luxurious feel with linen, suede, kraft and other textures.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- ===================================================
- CTA STRIP
-==================================================== -->
-<section class="bg-blue-600 text-white py-14 text-center slide-up">
-    <h3 class="text-3xl font-bold">Need Custom Business Cards?</h3>
-    <p class="mt-3 text-lg">We design and print completely personalized cards.</p>
-
-    <a href="contact.html"
-       class="mt-6 inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-bold shadow-md hover:bg-gray-200">
-       Contact Us
+<nav class="sticky top-0 z-50 glass-card mx-4 mt-4 px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold">SS</div>
+        <span class="text-xl font-extrabold tracking-tight">Shwet Shiva</span>
     </a>
+    <div class="hidden md:flex space-x-8 font-medium">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="office-binding.html" class="hover:text-blue-400">Services</a>
+        <a href="about.html" class="hover:text-blue-400">About</a>
+        <a href="contact.html" class="hover:text-blue-400">Contact</a>
+    </div>
+    <a href="https://wa.me/918087220081" class="bg-blue-600 px-5 py-2 rounded-full text-sm font-bold">Quick Order</a>
+</nav>
+
+<section class="py-20 px-6 text-center">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-gradient italic">First Impressions Matter.</h1>
+    <p class="text-gray-400 max-w-2xl mx-auto text-lg">From minimalist matte to high-end textured finishes, we craft cards that speak before you do.</p>
 </section>
 
-<!-- ===================================================
- FOOTER
-==================================================== -->
-<footer class="bg-gray-900 text-gray-300 py-10">
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
-
-        <div>
-            <h4 class="text-xl font-bold mb-3">Shwet Shiva Printing</h4>
-            <p>Premium printing services with fast delivery & top quality.</p>
+<section class="container mx-auto px-6 mb-20">
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 border-t-4 border-blue-500 card-choice">
+            <h3 class="text-2xl font-bold mb-2">Standard</h3>
+            <p class="text-blue-400 font-bold mb-4">Starting @ ₹1.5/card</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li><i class="fas fa-check mr-2 text-blue-500"></i> 300 GSM Art Card</li>
+                <li><i class="fas fa-check mr-2 text-blue-500"></i> Glossy or Matte Coat</li>
+                <li><i class="fas fa-check mr-2 text-blue-500"></i> Sharp CMYK Printing</li>
+            </ul>
+            <button onclick="orderCard('Standard')" class="w-full py-3 rounded-xl border border-white/20 hover:bg-white hover:text-black font-bold transition">Choose Standard</button>
         </div>
 
+        <div class="glass-card p-8 border-t-4 border-purple-500 card-choice relative overflow-hidden">
+            <div class="absolute top-4 right-[-35px] bg-purple-500 text-xs font-bold py-1 px-10 rotate-45">BEST SELLER</div>
+            <h3 class="text-2xl font-bold mb-2">Premium Matte</h3>
+            <p class="text-purple-400 font-bold mb-4">Starting @ ₹2.5/card</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li><i class="fas fa-check mr-2 text-purple-500"></i> 350 GSM Heavy Board</li>
+                <li><i class="fas fa-check mr-2 text-purple-500"></i> Velvet/Suede Touch</li>
+                <li><i class="fas fa-check mr-2 text-purple-500"></i> Rounded Corners Optional</li>
+            </ul>
+            <button onclick="orderCard('Premium Matte')" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 font-bold transition">Choose Premium</button>
+        </div>
+
+        <div class="glass-card p-8 border-t-4 border-amber-500 card-choice">
+            <h3 class="text-2xl font-bold mb-2">Executive Luxury</h3>
+            <p class="text-amber-500 font-bold mb-4">Custom Pricing</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li><i class="fas fa-check mr-2 text-amber-500"></i> Spot UV / Gold Foil</li>
+                <li><i class="fas fa-check mr-2 text-amber-500"></i> Textured Imported Paper</li>
+                <li><i class="fas fa-check mr-2 text-amber-500"></i> Embossed Lettering</li>
+            </ul>
+            <button onclick="orderCard('Executive Luxury')" class="w-full py-3 rounded-xl border border-amber-500/50 text-amber-500 hover:bg-amber-500 hover:text-black font-bold transition">Choose Luxury</button>
+        </div>
+    </div>
+</section>
+
+<section class="container mx-auto px-6 py-12">
+    <div class="glass-card p-10">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-4">Available Textures</h2>
+                <p class="text-gray-400 mb-6">We source premium papers from around the globe to ensure your card feels as good as it looks. Ask us for a physical sample kit!</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center">Linen Texture</div>
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center">Metallic Pearl</div>
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center">Kraft Eco</div>
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center">Hammer Finish</div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/600/400?business-card" class="rounded-2xl shadow-2xl opacity-80 hover:opacity-100 transition duration-500" alt="Texture">
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="border-t border-gray-800 py-12 mt-24 bg-black/30">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 text-gray-400">
         <div>
-            <h4 class="text-xl font-bold mb-3">Products</h4>
-            <ul class="space-y-1">
-                <li><a href="business-cards.html" class="hover:text-white">Business Cards</a></li>
-                <li><a href="brochures.html" class="hover:text-white">Brochures</a></li>
-                <li><a href="banners.html" class="hover:text-white">Banners</a></li>
-                <li><a href="packaging.html" class="hover:text-white">Packaging</a></li>
-                <li><a href="labels.html" class="hover:text-white">Labels</a></li>
-                  <li><a href="wedding-cards.html" class="hover:text-white">Wedding Cards</a></li>
-                <li><a href="invitation-cards.html" class="hover:text-white">Invitation Cards</a></li>
-                <li><a href="office-binding.html" class="hover:text-white">Office Binding</a></li>
+            <h4 class="text-white font-bold mb-4">Shwet Shiva Printing</h4>
+            <p class="text-sm">Delivering quality prints since 2010. Your brand deserves the best.</p>
+        </div>
+        <div>
+            <h4 class="text-white font-bold mb-4">Quick Links</h4>
+            <ul class="text-sm space-y-2">
+                <li><a href="brochures.html" class="hover:text-blue-500">Brochure Printing</a></li>
+                <li><a href="banners.html" class="hover:text-blue-500">Banners & Flex</a></li>
             </ul>
         </div>
-
         <div>
-            <h4 class="text-xl font-bold mb-3">Contact</h4>
-            <p>Email: infoshwetshivaprinting@gmail.com</p>
-            <p>Phone: +91 80872 20081</p>
+            <h4 class="text-white font-bold mb-4">Contact</h4>
+            <p class="text-sm">+91 80872 20081</p>
+            <p class="text-sm mt-1">infoshwetshivaprinting@gmail.com</p>
         </div>
-
     </div>
 </footer>
+
+<script>
+    function orderCard(type) {
+        const msg = `*New Business Card Inquiry*%0A---%0A*Category:* ${type}%0A*Requirement:* I am looking for premium visiting cards. Please share the design templates and price list for bulk orders.`;
+        window.open(`https://wa.me/918087220081?text=${msg}`, '_blank');
+    }
+</script>
 
 </body>
 </html>
