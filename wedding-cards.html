@@ -1,263 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Wedding Cards & Luxury Invitations | Shwet Shiva Printing</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<title>Wedding Cards | Luxury, Floral, Traditional & Modern Invitations</title>
-<meta name="description" content="Explore designer wedding cards in Gold, Floral, Pastel, Minimal, and Royal themes. Premium quality, elegant finishing, and custom printing for your big day.">
-<meta name="keywords" content="wedding cards, invitation printing, designer wedding cards, luxury wedding invitations">
-<link rel="canonical" href="https://www.shwetshivaprinting.com/wedding-cards">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --ivory: #fdfbf7;
+            --deep-maroon: #4a0404;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--ivory); color: #2d2d2d; }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        .gold-border { border: 1px solid rgba(197, 160, 89, 0.3); }
+        .bg-gold-gradient { background: linear-gradient(135deg, #c5a059 0%, #edd3a1 50%, #c5a059 100%); }
+        
+        .card-reveal {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card-reveal:hover { transform: translateY(-10px); }
+        .card-reveal::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--gold);
+            margin: 10px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .card-reveal:hover::after { opacity: 1; }
 
-<script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-.fade-in { animation: fadeIn 1.2s ease-in-out; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-.slide-up { animation: slideUp 1s ease-out; }
-@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-.zoom-hover:hover { transform: scale(1.04); transition: 0.35s ease; }
-.soft-hover:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.12); transition: 0.3s ease; }
-</style>
-
+        .section-divider {
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+            margin: 1.5rem auto;
+        }
+    </style>
 </head>
+<body>
 
-<body class="bg-gray-50">
-
-<!-- NAVIGATION -->
-<header class="sticky top-0 bg-white shadow z-50">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center space-x-3">
-            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">SS</div>
-            <div>
-                <h1 class="text-2xl font-bold">Shwet Shiva</h1>
-                <p class="text-sm text-gray-600 -mt-1">Printing Services</p>
-            </div>
-        </a>
-
-        <div class="hidden md:flex space-x-8 font-semibold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-
-            <!-- Products Dropdown -->
-            <div class="relative group cursor-pointer">
-                <span class="text-blue-600">Products</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-56 p-3 space-y-2">
-                    <a href="business-cards.html" class="block hover:text-blue-600">Business Cards</a>
-                    <a href="brochures.html" class="block hover:text-blue-600">Brochures</a>
-                    <a href="banners.html" class="block hover:text-blue-600">Banners</a>
-                    <a href="packaging.html" class="block hover:text-blue-600">Packaging</a>
-                    <a href="labels.html" class="block hover:text-blue-600">Labels</a>
-                    <hr>
-                    <a href="wedding-cards.html" class="block font-semibold text-blue-600">Wedding Cards</a>
-                    <a href="invitation-cards.html" class="block hover:text-blue-600">Invitation Cards</a>
-                    <a href="office-binding.html" class="block hover:text-blue-600">Office Binding</a>
-                </div>
-            </div>
-
-            <a href="services.html" class="hover:text-blue-600">Services</a>
-
-            <div class="relative group cursor-pointer">
-                <span class="hover:text-blue-600">Company</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-44 p-3 space-y-2">
-                    <a href="about.html" class="block hover:text-blue-600">About Us</a>
-                    <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-                </div>
-            </div>
-        </div>
-
-        <button id="mobileBtn" class="md:hidden text-3xl">&#9776;</button>
-    </nav>
-
-    <!-- Mobile -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow px-4 pb-4">
-        <a href="index.html" class="block py-2">Home</a>
-
-        <details class="py-2">
-            <summary class="cursor-pointer font-medium text-blue-600">Products</summary>
-            <div class="pl-4 space-y-1">
-                <a href="business-cards.html">Business Cards</a>
-                <a href="brochures.html">Brochures</a>
-                <a href="banners.html">Banners</a>
-                <a href="packaging.html">Packaging</a>
-                <a href="labels.html">Labels</a>
-                <a href="wedding-cards.html">Wedding Cards</a>
-                <a href="invitation-cards.html">Invitation Cards</a>
-                <a href="office-binding.html">Office Binding</a>
-            </div>
-        </details>
-
-        <a href="services.html" class="block py-2">Services</a>
-
-        <details class="py-2">
-            <summary class="cursor-pointer font-medium">Company</summary>
-            <div class="pl-4 space-y-1">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </details>
-    </div>
-</header>
-
-<script>
-document.getElementById("mobileBtn").onclick = () =>
-    document.getElementById("mobileMenu").classList.toggle("hidden");
-</script>
-
-<!-- HERO (Elegant Gold Theme) -->
-<section class="relative fade-in">
-    <img src="https://picsum.photos/1920/600?random=200" class="w-full h-[450px] object-cover brightness-75">
-    <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center px-6">
-        <h2 class="text-5xl font-extrabold drop-shadow-lg slide-up" style="font-family: 'Georgia', serif;">
-            Luxury Wedding Cards
-        </h2>
-        <p class="mt-4 text-xl max-w-3xl slide-up">
-            Explore premium wedding invitations crafted with elegance, beauty and tradition.
-        </p>
-    </div>
-</section>
-
-<!-- SECTION 1 — GOLD + WHITE FLORAL -->
-<section class="container mx-auto px-6 py-16">
-    <h3 class="text-3xl font-bold text-center mb-10 fade-in">Gold & White Floral Wedding Cards</h3>
-
-    <div class="grid md:grid-cols-3 gap-10">
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=201" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Royal Floral Design</h4>
-            <p class="text-gray-600 mt-2">Golden floral embossed finish with premium texture.</p>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=202" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Elegant Gold Foil</h4>
-            <p class="text-gray-600 mt-2">Luxurious foil stamping with classic white base.</p>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=203" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Floral Border Card</h4>
-            <p class="text-gray-600 mt-2">Soft floral edges with royal golden highlights.</p>
-        </div>
-    </div>
-</section>
-
-<!-- SECTION 2 — PASTEL PINK ROSE THEME -->
-<section class="bg-pink-50 py-16">
-    <h3 class="text-3xl font-bold text-center mb-10 fade-in text-pink-600">Pastel Pink & Rose Cards</h3>
-
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=204" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold text-pink-600">Soft Rose Design</h4>
-            <p class="text-gray-600 mt-2">Romantic pastel pink with beautiful rose illustrations.</p>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=205" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold text-pink-600">Blush Wedding Card</h4>
-            <p class="text-gray-600 mt-2">Elegant blush tones with modern printing.</p>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=206" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold text-pink-600">Pastel Flowers</h4>
-            <p class="text-gray-600 mt-2">Light pastel florals with soft textures.</p>
-        </div>
-    </div>
-</section>
-
-<!-- SECTION 3 — MINIMAL CREAM + GOLD -->
-<section class="container mx-auto px-6 py-16">
-    <h3 class="text-3xl font-bold text-center mb-10 fade-in">Minimal Cream & Gold Cards</h3>
-
-    <div class="grid md:grid-cols-3 gap-10">
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=207" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Gold Line Art</h4>
-            <p class="text-gray-600 mt-2">Modern minimal design with elegant golden lines.</p>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=208" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Classic Minimal</h4>
-            <p class="text-gray-600 mt-2">Clean cream texture with subtle elegance.</p>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow soft-hover slide-up">
-            <img src="https://picsum.photos/400/260?random=209" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold">Luxury Matte Cream</h4>
-            <p class="text-gray-600 mt-2">Smooth matte finish with gold accents.</p>
-        </div>
-    </div>
-</section>
-
-<!-- SECTION 4 — ROYAL MAROON + GOLD -->
-<section class="bg-red-900 py-16">
-    <h3 class="text-3xl font-bold text-center mb-10 fade-in text-yellow-300">Royal Maroon & Gold Cards</h3>
-
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
-        <div class="bg-red-800 p-5 rounded-xl shadow soft-hover slide-up text-white">
-            <img src="https://picsum.photos/400/260?random=210" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold text-yellow-300">Traditional Indian</h4>
-            <p class="mt-2">Rich maroon texture with traditional patterns.</p>
-        </div>
-
-        <div class="bg-red-800 p-5 rounded-xl shadow soft-hover slide-up text-white">
-            <img src="https://picsum.photos/400/260?random=211" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold text-yellow-300">Royal Gold Foil</h4>
-            <p class="mt-2">Heavy gold stamping for a royal feel.</p>
-        </div>
-
-        <div class="bg-red-800 p-5 rounded-xl shadow soft-hover slide-up text-white">
-            <img src="https://picsum.photos/400/260?random=212" class="rounded-lg mb-4 zoom-hover">
-            <h4 class="text-xl font-semibold text-yellow-300">Elite Maroon</h4>
-            <p class="mt-2">Premium finish for traditional ceremonies.</p>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="bg-blue-600 text-white py-14 text-center slide-up">
-    <h3 class="text-3xl font-bold">Want Custom Wedding Cards?</h3>
-    <p class="mt-3 text-lg">Share your theme, style, and details — we’ll design your dream invitation.</p>
-
-    <a href="contact.html"
-       class="mt-6 inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-bold shadow-md hover:bg-gray-200">
-       Contact Us
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gold-200 px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center font-bold text-gold-400 text-white">SS</div>
+        <span class="text-xl font-extrabold tracking-tight serif">Shwet Shiva</span>
     </a>
+    <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+        <a href="index.html" class="hover:text-gold-600 transition">Home</a>
+        <a href="wedding-cards.html" class="text-gold-600">Wedding</a>
+        <a href="invitation-cards.html" class="hover:text-gold-600 transition">Events</a>
+        <a href="contact.html" class="hover:text-gold-600 transition">Inquiry</a>
+    </div>
+</nav>
+
+<section class="relative py-28 px-6 text-center bg-[#f4f1ea]">
+    <div class="max-w-4xl mx-auto">
+        <span class="text-gold-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Handcrafted Excellence</span>
+        <h1 class="text-5xl md:text-7xl serif mb-6 text-stone-900">Your Love Story, <br><i class="font-normal">Beautifully Printed.</i></h1>
+        <div class="section-divider"></div>
+        <p class="text-stone-600 max-w-xl mx-auto text-lg italic">Premium textures, gold foil accents, and artisanal papers for the first glimpse of your forever.</p>
+    </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 py-10">
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
-        <div>
-            <h4 class="text-xl font-bold mb-3">Shwet Shiva Printing</h4>
-            <p>Premium printing services for weddings, events & businesses.</p>
+<section class="container mx-auto px-6 py-20">
+    
+    <div class="mb-20">
+        <div class="flex items-center gap-4 mb-10">
+            <h2 class="text-3xl serif">Royal Traditions</h2>
+            <div class="flex-grow h-[1px] bg-stone-200"></div>
         </div>
-
-        <div>
-            <h4 class="text-xl font-bold mb-3">Products</h4>
-            <ul class="space-y-1">
-                <li><a href="business-cards.html" class="hover:text-white">Business Cards</a></li>
-                <li><a href="brochures.html" class="hover:text-white">Brochures</a></li>
-                <li><a href="banners.html" class="hover:text-white">Banners</a></li>
-                <li><a href="packaging.html" class="hover:text-white">Packaging</a></li>
-                <li><a href="labels.html" class="hover:text-white">Labels</a></li>
-                <li><a href="wedding-cards.html" class="hover:text-white">Wedding Cards</a></li>
-                <li><a href="invitation-cards.html" class="hover:text-white">Invitation Cards</a></li>
-                <li><a href="office-binding.html" class="hover:text-white">Office Binding</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="text-xl font-bold mb-3">Contact</h4>
-            <p>Email: infoshwetshivaprinting@gmail.com</p>
-            <p>Phone: +91 80872 20081</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="card-reveal bg-white p-4 gold-border">
+                <img src="https://picsum.photos/600/700?wedding1" class="w-full h-80 object-cover mb-6">
+                <h3 class="serif text-2xl mb-2">Heritage Maroon</h3>
+                <p class="text-sm text-stone-500">Deep velvet textures with 24k-style gold foil stamping.</p>
+            </div>
+            <div class="card-reveal bg-white p-4 gold-border">
+                <img src="https://picsum.photos/600/700?wedding2" class="w-full h-80 object-cover mb-6">
+                <h3 class="serif text-2xl mb-2">The Palace Scroll</h3>
+                <p class="text-sm text-stone-500">Silk-finish scrolls with ornate wooden handles and tassels.</p>
+            </div>
+            <div class="card-reveal bg-white p-4 gold-border">
+                <img src="https://picsum.photos/600/700?wedding3" class="w-full h-80 object-cover mb-6">
+                <h3 class="serif text-2xl mb-2">Vintage Jharokha</h3>
+                <p class="text-sm text-stone-500">Laser-cut intricate patterns inspired by Indian architecture.</p>
+            </div>
         </div>
     </div>
+
+    <div class="mb-20">
+        <div class="flex items-center gap-4 mb-10">
+            <div class="flex-grow h-[1px] bg-stone-200"></div>
+            <h2 class="text-3xl serif">Modern Minimalism</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="card-reveal bg-white p-4 gold-border">
+                <img src="https://picsum.photos/600/700?pastel1" class="w-full h-80 object-cover mb-6">
+                <h3 class="serif text-2xl mb-2">Blush Vellum</h3>
+                <p class="text-sm text-stone-500">Translucent overlays with soft-pressed botanical florals.</p>
+            </div>
+            <div class="card-reveal bg-white p-4 gold-border">
+                <img src="https://picsum.photos/600/700?pastel2" class="w-full h-80 object-cover mb-6">
+                <h3 class="serif text-2xl mb-2">Champagne Acrylic</h3>
+                <p class="text-sm text-stone-500">Crystal clear glass-finish cards with etched white ink.</p>
+            </div>
+            <div class="card-reveal bg-white p-4 gold-border">
+                <img src="https://picsum.photos/600/700?pastel3" class="w-full h-80 object-cover mb-6">
+                <h3 class="serif text-2xl mb-2">Dusty Rose Foil</h3>
+                <p class="text-sm text-stone-500">Matte pastel cardstock with rose-gold metallic accents.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-stone-900 text-white py-24">
+    <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+            <h2 class="text-4xl serif mb-8 text-gold-400">Premium Add-ons</h2>
+            <div class="space-y-8">
+                <div class="flex gap-6">
+                    <i class="fas fa-stamp text-2xl text-gold-500"></i>
+                    <div>
+                        <h4 class="font-bold text-lg">Wax Seals</h4>
+                        <p class="text-stone-400 text-sm">Customized initials embossed in premium sealing wax.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <i class="fas fa-envelope-open-text text-2xl text-gold-500"></i>
+                    <div>
+                        <h4 class="font-bold text-lg">Envelope Liners</h4>
+                        <p class="text-stone-400 text-sm">Floral or patterned prints inside the envelope for a surprise pop.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <i class="fas fa-pencil-alt text-2xl text-gold-500"></i>
+                    <div>
+                        <h4 class="font-bold text-lg">Hand Calligraphy</h4>
+                        <p class="text-stone-400 text-sm">Guest name printing in elegant script fonts or handwritten style.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative">
+            <img src="https://picsum.photos/800/600?detail" class="rounded-2xl shadow-2xl">
+            <div class="absolute -bottom-6 -left-6 bg-gold-gradient p-8 rounded-2xl text-stone-900 font-bold max-w-xs">
+                "The quality of the gold foil was breathtaking. Our guests haven't stopped calling us!"
+                <p class="text-xs mt-4 uppercase tracking-wider opacity-70">— Anjali & Rahul</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 text-center px-6">
+    <div class="max-w-2xl mx-auto gold-border p-12 rounded-[50px]">
+        <h2 class="text-4xl serif mb-6">Request a Wedding Catalog</h2>
+        <p class="text-stone-500 mb-10">Speak with our design consultant to explore paper swatches and printing techniques.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="https://wa.me/918087220081" class="bg-stone-900 text-white px-10 py-4 rounded-full font-bold hover:bg-stone-800 transition">Chat via WhatsApp</a>
+            <a href="contact.html" class="border border-stone-300 px-10 py-4 rounded-full font-bold hover:bg-stone-50 transition">Book Consultation</a>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 text-center text-stone-400 text-xs border-t border-stone-200">
+    <p class="serif text-stone-600 text-lg mb-4">Shwet Shiva Printing Studio</p>
+    <p>&copy; 2026 Crafted with love for your special day.</p>
 </footer>
 
 </body>
