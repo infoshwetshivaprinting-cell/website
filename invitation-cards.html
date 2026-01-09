@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitation Cards | Shwet Shiva Printing</title>
+    <title>Invitation Cards | Shwet Shiva Studios</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -11,263 +11,230 @@
 
     <style>
         :root {
-            --primary: #6366f1;
-            --dark-bg: #0f172a;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent: #818cf8;
+            --bg-dark: #05070a;
         }
+        
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: var(--dark-bg); 
+            background-color: var(--bg-dark); 
             color: #f8fafc;
+            overflow-x: hidden;
         }
-        .serif-font { font-family: 'Playfair Display', serif; }
+
+        .serif { font-family: 'Playfair Display', serif; }
+
+        .bg-canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background-color: var(--bg-dark);
+        }
+        .bg-canvas::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.12;
+            pointer-events: none;
+        }
+
+        .glass-header {
+            background: rgba(5, 7, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         .glass-card {
-            background: var(--glass);
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .text-gradient-purple {
-            background: linear-gradient(to right, #fff, #a855f7);
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to bottom, #fff 30%, #a5b4fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .invitation-overlay {
-            background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0) 100%);
+            background: linear-gradient(0deg, rgba(5,7,10,1) 0%, rgba(5,7,10,0) 70%);
+        }
+
+        .category-image {
+            filter: saturate(0.8) contrast(1.1);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover .category-image {
+            transform: scale(1.08) rotate(1deg);
         }
     </style>
 </head>
 <body>
 
-<header class="sticky top-0 z-[100] bg-slate-900/95 backdrop-blur-lg border-b border-white/10">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-600/20">SS</div>
+<div class="bg-canvas"></div>
+
+<header class="glass-header sticky top-0 z-[100]">
+    <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-4">
+            <div class="w-11 h-11 bg-slate-900 rounded-lg flex items-center justify-center border border-white/10 text-white font-bold text-xl shadow-xl">SS</div>
             <div>
-                <h1 class="text-xl text-white leading-none font-normal">Shwet Shiva</h1>
-                <p class="text-[10px] text-blue-400 uppercase tracking-widest mt-1 font-normal">Printing Services</p>
+                <span class="block text-xl font-medium tracking-tight text-white leading-none">SHWET SHIVA</span>
+                <span class="text-[10px] text-indigo-400 uppercase tracking-[0.3em]">Studios</span>
             </div>
         </a>
-
-        <div class="hidden md:flex space-x-8 text-sm text-gray-300 font-normal">
-            <a href="index.html" class="hover:text-white transition">Home</a>
-            
+        <div class="hidden md:flex items-center space-x-10 text-sm font-medium">
+            <a href="index.html" class="text-gray-400 hover:text-white transition">Home</a>
             <div class="relative group">
-                <button class="hover:text-white flex items-center gap-1 py-1 focus:outline-none font-normal">
-                    Products <i class="fas fa-chevron-down text-[8px]"></i>
-                </button>
-                <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-full left-0 bg-slate-800 border border-white/10 shadow-2xl rounded-xl w-64 p-3 mt-1 grid grid-cols-1 gap-1">
-                    <a href="business-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Business Cards</a>
-                    <a href="brochures.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Brochures</a>
-                    <a href="banners.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Banners</a>
-                    <a href="packaging.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Packaging</a>
-                    <a href="labels.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Labels</a>
-                    <hr class="border-white/5 my-1">
-                    <a href="wedding-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Wedding Cards</a>
-                    <a href="invitation-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Invitation Cards</a>
-                    <a href="office-binding.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Office Binding</a>
+                <button class="text-white flex items-center gap-1">Products <i class="fas fa-chevron-down text-[8px] opacity-50"></i></button>
                 </div>
-            </div>
-
-            <a href="services.html" class="hover:text-white transition">Services</a>
-            <a href="about.html" class="hover:text-white transition">About</a>
-            <a href="contact.html" class="hover:text-white transition">Contact</a>
+            <a href="services.html" class="text-gray-400 hover:text-white transition">Services</a>
+            <a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a>
+            <a href="https://wa.me/918087220081" class="bg-white text-black px-6 py-2.5 rounded-full hover:bg-gray-200 transition font-bold">WhatsApp</a>
         </div>
-
-        <button id="mobileBtn" class="md:hidden text-white p-2 focus:outline-none">
-            <i class="fas fa-bars text-2xl" id="menuIcon"></i>
-        </button>
     </nav>
-
-    <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-t border-white/10 px-6 py-8 space-y-6 absolute w-full left-0 shadow-2xl max-h-[90vh] overflow-y-auto font-normal">
-        <a href="index.html" class="block text-xl text-white">Home</a>
-        
-        <div class="space-y-4">
-            <p class="text-[10px] text-blue-500 uppercase tracking-[0.2em]">Our Products</p>
-            <div class="grid grid-cols-2 gap-x-4 gap-y-3">
-                <a href="business-cards.html" class="text-gray-400 text-sm">Business Cards</a>
-                <a href="brochures.html" class="text-gray-400 text-sm">Brochures</a>
-                <a href="banners.html" class="text-gray-400 text-sm">Banners</a>
-                <a href="packaging.html" class="text-gray-400 text-sm">Packaging</a>
-                <a href="labels.html" class="text-gray-400 text-sm">Labels</a>
-                <a href="wedding-cards.html" class="text-gray-400 text-sm">Wedding Cards</a>
-                <a href="invitation-cards.html" class="text-gray-400 text-sm">Invitation Cards</a>
-                <a href="office-binding.html" class="text-gray-400 text-sm">Office Binding</a>
-            </div>
-        </div>
-
-        <div class="flex flex-col space-y-4 pt-4 border-t border-white/5">
-            <a href="services.html" class="text-lg text-white">Services</a>
-            <a href="about.html" class="text-lg text-white">About Us</a>
-            <a href="contact.html" class="text-lg text-white">Contact</a>
-        </div>
-        
-        <a href="https://wa.me/918087220081" class="block w-full bg-blue-600 text-white text-center py-4 rounded-xl shadow-lg shadow-blue-600/30">
-            WhatsApp Quote
-        </a>
-    </div>
 </header>
-<script>
-    const mobileBtn = document.getElementById('mobileBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
 
-    // Toggle Mobile Menu
-    mobileBtn.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.toggle('hidden');
-        
-        // Update Icon based on state
-        if (isHidden) {
-            menuIcon.classList.replace('fa-times', 'fa-bars');
-        } else {
-            menuIcon.classList.replace('fa-bars', 'fa-times');
-        }
-    });
+<main>
+    <section class="py-24 px-6 text-center">
+        <span class="text-indigo-400 font-bold tracking-[0.4em] uppercase text-[10px] mb-4 block">Event Stationery</span>
+        <h1 class="serif text-5xl md:text-7xl font-bold mb-6 text-gradient italic">Crafted to Captivate.</h1>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+            From intimate gatherings to grand milestones, our invitations are designed to be a tangible piece of your celebration's legacy.
+        </p>
+    </section>
 
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.replace('fa-times', 'fa-bars');
-        });
-    });
-
-    // Reset Menu when window is resized to Desktop width
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) { // 768px is the 'md' breakpoint
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.replace('fa-times', 'fa-bars');
-        }
-    });
-</script>
-
-<section class="py-20 px-6 text-center">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-gradient-purple serif-font italic">Beautifully Crafted Invites.</h1>
-    <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">Whether it's a first birthday or a milestone corporate event, we print invitations that recipients want to keep forever.</p>
-</section>
-
-<section class="container mx-auto px-6 mb-24">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <div class="glass-card overflow-hidden group">
-            <div class="relative h-72">
-                <img src="https://picsum.photos/600/600?birthday" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 invitation-overlay flex items-end p-6">
-                    <div>
-                        <h3 class="text-2xl font-bold">Birthday Parties</h3>
-                        <p class="text-gray-400 text-sm">Themed designs for kids & adults</p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-6">
-                <button onclick="openWhatsApp('Birthday Invitation')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition font-bold text-sm">View Birthday Designs</button>
-            </div>
-        </div>
-
-        <div class="glass-card overflow-hidden group">
-            <div class="relative h-72">
-                <img src="https://picsum.photos/600/600?corporate" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 invitation-overlay flex items-end p-6">
-                    <div>
-                        <h3 class="text-2xl font-bold">Corporate Events</h3>
-                        <p class="text-gray-400 text-sm">Formal, minimal & premium cardstocks</p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-6">
-                <button onclick="openWhatsApp('Corporate Invite')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition font-bold text-sm">Corporate Catalog</button>
-            </div>
-        </div>
-
-        <div class="glass-card overflow-hidden group">
-            <div class="relative h-72">
-                <img src="https://picsum.photos/600/600?baby" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 invitation-overlay flex items-end p-6">
-                    <div>
-                        <h3 class="text-2xl font-bold">Baby Showers</h3>
-                        <p class="text-gray-400 text-sm">Pastel colors & soft-touch finishes</p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-6">
-                <button onclick="openWhatsApp('Baby Shower Invite')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition font-bold text-sm">Explore Baby Shower</button>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section class="container mx-auto px-6 py-20 border-t border-white/5">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-            <h2 class="text-4xl font-bold mb-8 serif-font">The Shwet Shiva <span class="text-indigo-400 italic">Finishing Touch</span></h2>
-            <div class="space-y-6">
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-500 shrink-0"><i class="fas fa-layer-group"></i></div>
-                    <div>
-                        <h4 class="font-bold text-lg">Multi-Fold Options</h4>
-                        <p class="text-gray-400 text-sm">Single panel, Gate-fold, or Tri-fold designs to fit your story.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-500 shrink-0"><i class="fas fa-magic"></i></div>
-                    <div>
-                        <h4 class="font-bold text-lg">Digital Foil & Varnish</h4>
-                        <p class="text-gray-400 text-sm">Add shiny gold, silver or clear raised textures to names and dates.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-500 shrink-0"><i class="fas fa-envelope-open-text"></i></div>
-                    <div>
-                        <h4 class="font-bold text-lg">Matching Envelopes</h4>
-                        <p class="text-gray-400 text-sm">Custom printed envelopes that match the card's theme perfectly.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="glass-card p-2">
-            <img src="https://picsum.photos/800/600?print" class="rounded-2xl" alt="Printing Detail">
-        </div>
-    </div>
-</section>
-
-<section class="container mx-auto px-6 py-12">
-    <div class="glass-card bg-indigo-600 p-12 text-center relative overflow-hidden">
-        <div class="relative z-10">
-            <h2 class="text-3xl md:text-5xl font-black mb-6">Have a unique idea?</h2>
-            <p class="text-indigo-100 mb-8 max-w-xl mx-auto">Send us a reference image from Pinterest or Instagram and we'll recreate it with premium local materials.</p>
-            <a href="contact.html" class="inline-block bg-white text-indigo-600 px-10 py-4 rounded-2xl font-extrabold transition shadow-xl hover:scale-105">Request Custom Quote</a>
-        </div>
-        <div class="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full"></div>
-    </div>
-</section>
-
-<footer class="border-t border-gray-800 py-16 bg-black/50">
-    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-gray-400">
-        <div class="col-span-1 md:col-span-2">
-            <h4 class="text-white text-2xl font-bold mb-4">Shwet Shiva Printing</h4>
-            <p class="max-w-sm mb-6">Elevating brands through high-precision printing and innovative design solutions since 2010.</p>
+    <section class="container mx-auto px-6 mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             
+            <div class="glass-card overflow-hidden rounded-[32px] group cursor-pointer" onclick="openWhatsApp('Birthday Invitation')">
+                <div class="relative h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=800" class="category-image w-full h-full object-cover">
+                    <div class="absolute inset-0 invitation-overlay flex items-end p-8">
+                        <div>
+                            <span class="text-indigo-400 text-[10px] uppercase tracking-[0.3em] font-bold mb-2 block">The Celebration</span>
+                            <h3 class="serif text-3xl font-bold text-white mb-2 italic">Birthday Parties</h3>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">Playful textures and vivid colors for every milestone year.</p>
+                            <div class="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
+                                Explore Designs <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card overflow-hidden rounded-[32px] group cursor-pointer" onclick="openWhatsApp('Corporate Invite')">
+                <div class="relative h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800" class="category-image w-full h-full object-cover">
+                    <div class="absolute inset-0 invitation-overlay flex items-end p-8">
+                        <div>
+                            <span class="text-indigo-400 text-[10px] uppercase tracking-[0.3em] font-bold mb-2 block">The Network</span>
+                            <h3 class="serif text-3xl font-bold text-white mb-2 italic">Corporate Events</h3>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">Minimalist aesthetics and premium cardstocks for formal impact.</p>
+                            <div class="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
+                                View Catalog <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card overflow-hidden rounded-[32px] group cursor-pointer" onclick="openWhatsApp('Baby Shower Invite')">
+                <div class="relative h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1515488764276-3bc3dedb1f0c?auto=format&fit=crop&q=80&w=800" class="category-image w-full h-full object-cover">
+                    <div class="absolute inset-0 invitation-overlay flex items-end p-8">
+                        <div>
+                            <span class="text-indigo-400 text-[10px] uppercase tracking-[0.3em] font-bold mb-2 block">The Beginning</span>
+                            <h3 class="serif text-3xl font-bold text-white mb-2 italic">Baby Showers</h3>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">Soft-touch finishes and pastel palettes for precious moments.</p>
+                            <div class="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
+                                Soft Collections <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div>
-            <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Contact</h5>
-            <p class="text-sm mb-2">+91 80872 20081</p>
-            <p class="text-sm">infoshwetshivaprinting@gmail.com</p>
+    </section>
+
+    <section class="container mx-auto px-6 py-32 border-t border-white/5">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="space-y-12">
+                <div>
+                    <span class="text-indigo-400 font-bold tracking-[0.4em] uppercase text-[10px] mb-4 block">The Studio Standard</span>
+                    <h2 class="serif text-4xl md:text-5xl font-bold italic text-white leading-tight">Artisanal finishes for the <span class="text-indigo-400">modern host.</span></h2>
+                </div>
+                
+                <div class="space-y-10">
+                    <div class="flex gap-8 group">
+                        <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-indigo-400 shrink-0 border border-white/10 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-gem text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-white">Digital Foil Embellishment</h4>
+                            <p class="text-gray-500 font-light text-sm leading-relaxed">Add raised gold or silver textures that catch the light and the eye.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-8 group">
+                        <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-indigo-400 shrink-0 border border-white/10 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-leaf text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-white">Luxury Cardstocks</h4>
+                            <p class="text-gray-500 font-light text-sm leading-relaxed">From metallic pearl to eco-conscious textured linens.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-8 group">
+                        <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-indigo-400 shrink-0 border border-white/10 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-stamp text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-white">Bespoke Monograms</h4>
+                            <p class="text-gray-500 font-light text-sm leading-relaxed">Custom designed initials to give your event a unique brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -inset-4 bg-indigo-600/10 blur-[100px] rounded-full"></div>
+                <div class="glass-card p-3 rounded-[40px] relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&q=80&w=1000" class="rounded-[32px] grayscale hover:grayscale-0 transition-all duration-1000" alt="Studio Printing Process">
+                </div>
+            </div>
         </div>
-        <div>
-            <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Office</h5>
-            <p class="text-sm leading-relaxed">Randive galli, Purw, Kasaba Bawada, Kolhapur, Maharashtra 416006</p>
+    </section>
+
+    <section class="container mx-auto px-6 mb-32">
+        <div class="glass-card rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="serif text-4xl md:text-6xl mb-8 italic text-white">Your vision, realized.</h2>
+                <p class="text-gray-500 mb-12 max-w-xl mx-auto font-light text-lg leading-relaxed">Seen something on Pinterest? Share the reference and we'll engineer the perfect version for you.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <a href="contact.html" class="bg-indigo-600 text-white px-12 py-6 rounded-full font-bold text-lg hover:bg-indigo-500 transition shadow-2xl shadow-indigo-600/20">Request Custom Quote</a>
+                    <a href="https://wa.me/918087220081" class="text-white hover:text-indigo-400 transition font-bold tracking-widest text-xs uppercase">Chat with Designer</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="text-center mt-16 text-xs text-gray-600">
-        &copy; 2026 Shwet Shiva Printing Studios. All rights reserved.
-    </div>
+    </section>
+</main>
+
+<footer class="bg-[#030406] border-t border-white/5 py-20 text-center">
+    <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 Shwet Shiva Printing Studios</p>
 </footer>
 
 <script>
     function openWhatsApp(category) {
-        const msg = `*Invitation Inquiry*%0A---%0A*Type:* ${category}%0A*Request:* Please share some recent samples and the pricing for custom printing.`;
+        const msg = `*Studio Invitation Inquiry*%0A---%0A*Category:* ${category}%0A*Request:* I'm interested in premium samples and pricing for custom event invitations.`;
         window.open(`https://wa.me/918087220081?text=${msg}`, '_blank');
     }
 </script>
