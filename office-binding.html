@@ -285,5 +285,38 @@
     </div>
 </footer>
 
+<script>
+    // Robust Script to handle mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileBtn = document.getElementById('mobileBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if(mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                
+                if (isHidden) {
+                    menuIcon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = 'auto';
+                } else {
+                    menuIcon.classList.replace('fa-bars', 'fa-times');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+
+            // Close menu if user clicks a link
+            const links = mobileMenu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+    });
+</script>
 </body>
 </html>
