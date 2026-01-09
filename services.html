@@ -58,7 +58,7 @@
 </head>
 <body>
 
-<header class="glass-header sticky top-0 z-[100]">
+<header class="glass-header sticky top-0 z-[100] bg-slate-900/95 backdrop-blur-md">
     <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
         <a href="about.html" class="group flex items-center space-x-4">
             <div class="relative">
@@ -103,24 +103,29 @@
             </a>
         </div>
 
-        <button id="mobileBtn" class="md:hidden text-white p-2">
+        <button id="mobileBtn" class="md:hidden text-white p-2 relative z-[110]">
             <i class="fas fa-bars text-xl" id="menuIcon"></i>
         </button>
     </nav>
 
-    <div id="mobileMenu" class="hidden md:hidden bg-[#05070a] px-8 py-10 space-y-8 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto">
+    <div id="mobileMenu" class="hidden fixed inset-0 top-[80px] bg-[#05070a] px-8 py-10 space-y-8 z-[105] h-screen overflow-y-auto">
         <div class="space-y-6">
             <a href="index.html" class="block text-2xl font-semibold text-white">Home</a>
             <a href="services.html" class="block text-2xl font-semibold text-white">Services</a>
-            <div class="pt-4 space-y-4">
+            <div class="pt-4 space-y-4 border-t border-white/10">
                 <p class="text-[10px] text-indigo-500 uppercase tracking-[0.2em] font-bold">Catalog</p>
                 <div class="grid grid-cols-2 gap-4">
                     <a href="business-cards.html" class="text-gray-400 text-sm">Business Cards</a>
                     <a href="packaging.html" class="text-gray-400 text-sm">Packaging</a>
                     <a href="wedding-cards.html" class="text-gray-400 text-sm">Wedding Cards</a>
                     <a href="labels.html" class="text-gray-400 text-sm">Labels</a>
+                    <a href="brochures.html" class="text-gray-400 text-sm">Brochures</a>
+                    <a href="banners.html" class="text-gray-400 text-sm">Banners</a>
+                    <a href="invitation-cards.html" class="text-gray-400 text-sm">Invitations</a>
+                    <a href="office-binding.html" class="text-gray-400 text-sm">Binding</a>
                 </div>
             </div>
+            <a href="contact.html" class="block text-2xl font-semibold text-white">Contact</a>
         </div>
         <a href="https://wa.me/918087220081" class="block w-full bg-indigo-600 text-white text-center py-4 rounded-2xl font-bold">WhatsApp Quote</a>
     </div>
