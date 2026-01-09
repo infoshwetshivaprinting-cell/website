@@ -281,10 +281,36 @@
     </section>
 </main>
 
-<footer class="bg-[#030406] border-t border-white/5 py-20 mt-20 text-center">
-    <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">&copy; 2026 Shwet Shiva Printing Studios</p>
+<footer class="bg-[#030406] border-t border-white/5 pt-24 pb-12">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-16 mb-24 text-left">
+            <div class="md:col-span-2">
+                <h2 class="serif text-3xl text-white mb-6">Let's create something <br><i class="text-indigo-400">remarkable</i>.</h2>
+                <div class="flex space-x-6">
+                   <a href="#" class="text-2xl text-gray-500 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                   <a href="#" class="text-2xl text-gray-500 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-6">Contact</h4>
+                <address class="not-italic text-gray-400 text-sm leading-loose">
+                    +91 80872 20081<br>
+                    infoshwetshivaprinting@gmail.com
+                </address>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-6">Workshop</h4>
+                <p class="text-gray-400 text-sm leading-loose">
+                    Randive Galli, Kasaba Bawada<br>
+                    Kolhapur, MH 416006
+                </p>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 text-center text-[10px] text-gray-600 uppercase tracking-widest">
+            <p>&copy; 2026 Shwet Shiva Printing Studios</p>
+        </div>
+    </div>
 </footer>
-
 <script>
     function sendOrder() {
         const fold = document.querySelector('input[name="fold"]:checked').value;
