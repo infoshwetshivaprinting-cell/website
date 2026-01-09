@@ -218,7 +218,30 @@
         window.open(`https://wa.me/918087220081?text=${msg}`, '_blank');
     }
     
-    // Mobile Menu logic... (same as Home)
+ 
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mobileBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (isHidden) {
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = 'auto';
+        } else {
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
 </script>
 
 </body>
