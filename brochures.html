@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Brochures & Flyers | Shwet Shiva Printing</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --primary: #3b82f6;
@@ -15,6 +18,10 @@
         }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: #f8fafc;
+        }
+        .glass-card {
             background: var(--glass);
             backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
@@ -30,14 +37,13 @@
             border: 1px solid var(--glass-border) !important;
             color: white !important;
         }
-
         .fold-option input:checked + .fold-content {
             border-color: var(--primary);
             background: rgba(59, 130, 246, 0.1);
         }
     </style>
 </head>
-  <body>
+<body>
 
 <header class="sticky top-0 z-[100] bg-slate-900/95 backdrop-blur-lg border-b border-white/10">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -150,6 +156,7 @@
 
 <section class="container mx-auto px-6 mb-24">
     <div class="grid lg:grid-cols-3 gap-8">
+        
         <div class="lg:col-span-2 space-y-8">
             <div class="glass-card p-8">
                 <h3 class="text-xl font-bold mb-6">1. Choose Your Fold Style</h3>
@@ -215,12 +222,14 @@
                     <span class="text-white font-bold">CMYK Full Color</span>
                 </div>
             </div>
+
             <button onclick="sendOrder()" class="w-full bg-blue-600 hover:bg-blue-700 p-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition transform hover:scale-105">
                 <i class="fab fa-whatsapp text-xl"></i> Get Price Quote
             </button>
         </div>
     </div>
 </section>
+
 <section class="container mx-auto px-6 py-12">
     <h2 class="text-3xl font-bold mb-10 text-center">Folding Styles Showcase</h2>
     <div class="grid md:grid-cols-3 gap-8">
@@ -274,8 +283,11 @@
         const fold = document.querySelector('input[name="fold"]:checked').value;
         const gsm = document.getElementById('gsm').value;
         const qty = document.getElementById('qty').value;
-
+        
         const msg = `*Brochure Printing Inquiry*%0A---%0A*Fold Style:* ${fold}%0A*Paper:* ${gsm}%0A*Quantity:* ${qty}%0A---%0APlease provide a quote.`;
         window.open(`https://wa.me/918087220081?text=${msg}`, '_blank');
     }
 </script>
+
+</body>
+</html>
