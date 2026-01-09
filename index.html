@@ -297,27 +297,37 @@
     </div>
 </footer>
 
+
 <script>
-    const mobileBtn = document.getElementById('mobileBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
+    // Robust Script to handle mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileBtn = document.getElementById('mobileBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
 
-    mobileBtn.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.toggle('hidden');
-        if (isHidden) {
-            menuIcon.classList.replace('fa-times', 'fa-bars');
-            document.body.style.overflow = 'auto';
-        } else {
-            menuIcon.classList.replace('fa-bars', 'fa-times');
-            document.body.style.overflow = 'hidden';
-        }
-    });
+        if(mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                
+                if (isHidden) {
+                    menuIcon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = 'auto';
+                } else {
+                    menuIcon.classList.replace('fa-bars', 'fa-times');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.replace('fa-times', 'fa-bars');
-            document.body.style.overflow = 'auto';
+            // Close menu if user clicks a link
+            const links = mobileMenu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = 'auto';
+                });
+            });
         }
     });
 </script>
