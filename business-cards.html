@@ -12,7 +12,7 @@
     <style>
         :root {
             --primary: #3b82f6;
-            --dark-bg: #020617;
+            --dark-bg: #0f172a;
             --glass: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
@@ -20,215 +20,224 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: var(--dark-bg); 
             color: #f8fafc;
-            overflow-x: hidden;
         }
         .glass-card {
             background: var(--glass);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 24px;
         }
         .text-gradient {
-            background: linear-gradient(to right, #ffffff, #60a5fa, #3b82f6);
+            background: linear-gradient(to right, #fff, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        input, select {
+            background: rgba(0,0,0,0.3) !important;
+            border: 1px solid var(--glass-border) !important;
+            color: white !important;
+        }
         .card-choice:hover {
-            transform: translateY(-12px);
-            border-color: rgba(59, 130, 246, 0.5);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
         }
-        .icon-circle {
-            height: 60px;
-            width: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 18px;
-            margin-bottom: 20px;
-        }
-        /* Visual cues for different categories */
-        .category-standard { border-top: 6px solid #94a3b8; }
-        .category-premium { border-top: 6px solid #a855f7; background: rgba(168, 85, 247, 0.04); }
-        .category-luxury { border-top: 6px solid #f59e0b; background: rgba(245, 158, 11, 0.04); }
     </style>
 </head>
 <body>
 
-<header class="sticky top-0 z-[100] bg-slate-950/80 backdrop-blur-xl border-b border-white/5">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<header class="sticky top-0 z-[100] bg-slate-900/95 backdrop-blur-lg border-b border-white/10">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="flex items-center space-x-3">
-            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-xl shadow-blue-500/20">SS</div>
+            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-600/20">SS</div>
             <div>
-                <h1 class="text-xl font-bold text-white tracking-tight">Shwet Shiva</h1>
-                <p class="text-[10px] text-blue-400 uppercase tracking-widest font-semibold">Premium Printing</p>
+                <h1 class="text-xl text-white leading-none font-normal">Shwet Shiva</h1>
+                <p class="text-[10px] text-blue-400 uppercase tracking-widest mt-1 font-normal">Printing Services</p>
             </div>
         </a>
 
-        <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-400">
+        <div class="hidden md:flex space-x-8 text-sm text-gray-300 font-normal">
             <a href="index.html" class="hover:text-white transition">Home</a>
-            <div class="relative group">
-                <button class="hover:text-white flex items-center gap-1">Products <i class="fas fa-chevron-down text-[10px]"></i></button>
-                <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-full -left-4 bg-slate-900 border border-white/10 shadow-2xl rounded-2xl w-56 p-2 mt-2">
-                    <a href="business-cards.html" class="flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition text-white">
-                        <i class="fas fa-address-card text-blue-500"></i> Business Cards
-                    </a>
-                    <a href="wedding-cards.html" class="flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition text-white">
-                        <i class="fas fa-heart text-pink-500"></i> Wedding Cards
-                    </a>
-                </div>
-            </div>
-            <a href="contact.html" class="hover:text-white transition">Contact</a>
-            <a href="https://wa.me/918087220081" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-blue-600/20">
-                Get Started
-            </a>
-        </div>
-
-        <button id="mobileBtn" class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
-    </nav>
-</header>
-
-<section class="relative py-24 px-6 overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full -z-10"></div>
-    <div class="container mx-auto text-center">
-        <span class="px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">Impress Everyone</span>
-        <h1 class="text-5xl md:text-8xl font-extrabold mt-8 mb-6 text-gradient">Your Identity, <br>Hand-Crafted.</h1>
-        <p class="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">We don't just print cards. We build your first impression with textures you can feel and quality you can see.</p>
-    </div>
-</section>
-
-<section class="container mx-auto px-6 mb-32">
-    <div class="grid lg:grid-cols-3 gap-8">
-        
-        <div class="glass-card p-10 category-standard card-choice">
-            <div class="icon-circle bg-slate-800 text-slate-400">
-                <i class="fas fa-layer-group text-2xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-2">Standard</h3>
-            <p class="text-slate-400 text-sm mb-6">Simple, clean, and professional for everyday networking.</p>
-            <div class="flex items-baseline gap-2 mb-8">
-                <span class="text-3xl font-bold text-white">₹1.50</span>
-                <span class="text-gray-500">/ per card</span>
-            </div>
-            <ul class="space-y-4 mb-10">
-                <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check-circle text-blue-500"></i> Good Quality Paper</li>
-                <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check-circle text-blue-500"></i> Matte/Glossy Finish</li>
-            </ul>
-            <button onclick="orderCard('Standard')" class="w-full py-4 rounded-2xl bg-white/5 hover:bg-white hover:text-black font-bold transition-all border border-white/10">Order Standard</button>
-        </div>
-
-        <div class="glass-card p-10 category-premium card-choice relative overflow-hidden">
-            <div class="absolute top-6 right-[-35px] bg-purple-600 text-[10px] font-black py-1 px-10 rotate-45 shadow-lg">POPULAR</div>
-            <div class="icon-circle bg-purple-500/20 text-purple-400">
-                <i class="fas fa-crown text-2xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-2">Premium Matte</h3>
-            <p class="text-slate-400 text-sm mb-6">Thick, velvety touch that feels expensive and unique.</p>
-            <div class="flex items-baseline gap-2 mb-8">
-                <span class="text-3xl font-bold text-white">₹2.50</span>
-                <span class="text-gray-500">/ per card</span>
-            </div>
-            <ul class="space-y-4 mb-10">
-                <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check-circle text-purple-500"></i> Super Thick Board</li>
-                <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check-circle text-purple-500"></i> Soft-Touch Feel</li>
-            </ul>
-            <button onclick="orderCard('Premium Matte')" class="w-full py-4 rounded-2xl bg-purple-600 hover:bg-purple-500 shadow-xl shadow-purple-600/20 font-bold transition-all">Order Premium</button>
-        </div>
-
-        <div class="glass-card p-10 category-luxury card-choice">
-            <div class="icon-circle bg-amber-500/20 text-amber-500">
-                <i class="fas fa-gem text-2xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-2">Executive Luxury</h3>
-            <p class="text-slate-400 text-sm mb-6">Gold foils and textures for those who want the absolute best.</p>
-            <div class="flex items-baseline gap-2 mb-8">
-                <span class="text-3xl font-bold text-white">Custom</span>
-                <span class="text-gray-500">Price</span>
-            </div>
-            <ul class="space-y-4 mb-10">
-                <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check-circle text-amber-500"></i> Real Gold/Silver Foil</li>
-                <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check-circle text-amber-500"></i> Luxury 3D Texture</li>
-            </ul>
-            <button onclick="orderCard('Executive Luxury')" class="w-full py-4 rounded-2xl border border-amber-500/50 text-amber-500 hover:bg-amber-500 hover:text-black font-bold transition-all">Order Luxury</button>
-        </div>
-    </div>
-</section>
-
-<section class="container mx-auto px-6 py-20 bg-white/5 rounded-[40px] mb-32 border border-white/5">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="space-y-8">
-            <h2 class="text-4xl font-bold tracking-tight">Feel the <span class="text-blue-500">Difference</span></h2>
-            <p class="text-gray-400 text-lg">You don't need to be an expert to see the quality. Our papers are chosen to make you stand out.</p>
             
-            <div class="grid grid-cols-2 gap-4">
-                <div class="p-6 rounded-2xl bg-slate-900 border border-white/5 flex flex-col items-center text-center">
-                    <i class="fas fa-scroll text-blue-400 mb-3 text-xl"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Linen Texture</span>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-900 border border-white/5 flex flex-col items-center text-center">
-                    <i class="fas fa-sparkles text-purple-400 mb-3 text-xl"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Metallic Pearl</span>
+            <div class="relative group">
+                <button class="hover:text-white flex items-center gap-1 py-1 focus:outline-none font-normal">
+                    Products <i class="fas fa-chevron-down text-[8px]"></i>
+                </button>
+                <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-full left-0 bg-slate-800 border border-white/10 shadow-2xl rounded-xl w-64 p-3 mt-1 grid grid-cols-1 gap-1">
+                    <a href="business-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Business Cards</a>
+                    <a href="brochures.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Brochures</a>
+                    <a href="banners.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Banners</a>
+                    <a href="packaging.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Packaging</a>
+                    <a href="labels.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Labels</a>
+                    <hr class="border-white/5 my-1">
+                    <a href="wedding-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Wedding Cards</a>
+                    <a href="invitation-cards.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Invitation Cards</a>
+                    <a href="office-binding.html" class="block p-2 hover:bg-white/5 rounded-lg transition text-xs font-normal">Office Binding</a>
                 </div>
             </div>
+
+            <a href="services.html" class="hover:text-white transition">Services</a>
+            <a href="about.html" class="hover:text-white transition">About</a>
+            <a href="contact.html" class="hover:text-white transition">Contact</a>
         </div>
-        <div class="relative">
-            <div class="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full"></div>
-            <img src="https://images.unsplash.com/photo-1589118949245-7d38baf380d6?auto=format&fit=crop&q=80&w=800" class="relative rounded-[32px] shadow-2xl border border-white/10" alt="Business Card Design">
+
+        <button id="mobileBtn" class="md:hidden text-white p-2 focus:outline-none">
+            <i class="fas fa-bars text-2xl" id="menuIcon"></i>
+        </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-t border-white/10 px-6 py-8 space-y-6 absolute w-full left-0 shadow-2xl max-h-[90vh] overflow-y-auto font-normal">
+        <a href="index.html" class="block text-xl text-white">Home</a>
+        
+        <div class="space-y-4">
+            <p class="text-[10px] text-blue-500 uppercase tracking-[0.2em]">Our Products</p>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+                <a href="business-cards.html" class="text-gray-400 text-sm">Business Cards</a>
+                <a href="brochures.html" class="text-gray-400 text-sm">Brochures</a>
+                <a href="banners.html" class="text-gray-400 text-sm">Banners</a>
+                <a href="packaging.html" class="text-gray-400 text-sm">Packaging</a>
+                <a href="labels.html" class="text-gray-400 text-sm">Labels</a>
+                <a href="wedding-cards.html" class="text-gray-400 text-sm">Wedding Cards</a>
+                <a href="invitation-cards.html" class="text-gray-400 text-sm">Invitation Cards</a>
+                <a href="office-binding.html" class="text-gray-400 text-sm">Office Binding</a>
+            </div>
+        </div>
+
+        <div class="flex flex-col space-y-4 pt-4 border-t border-white/5">
+            <a href="services.html" class="text-lg text-white">Services</a>
+            <a href="about.html" class="text-lg text-white">About Us</a>
+            <a href="contact.html" class="text-lg text-white">Contact</a>
+        </div>
+        
+        <a href="https://wa.me/918087220081" class="block w-full bg-blue-600 text-white text-center py-4 rounded-xl shadow-lg shadow-blue-600/30">
+            WhatsApp Quote
+        </a>
+    </div>
+</header>
+<script>
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    // Toggle Mobile Menu
+    mobileBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        
+        // Update Icon based on state
+        if (isHidden) {
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+        } else {
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+        }
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+        });
+    });
+
+    // Reset Menu when window is resized to Desktop width
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) { // 768px is the 'md' breakpoint
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+</script>
+
+<section class="py-20 px-6 text-center">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-gradient italic">First Impressions Matter.</h1>
+    <p class="text-gray-400 max-w-2xl mx-auto text-lg">From minimalist matte to high-end textured finishes, we craft cards that speak before you do.</p>
+</section>
+
+<section class="container mx-auto px-6 mb-20">
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 border-t-4 border-blue-500 card-choice">
+            <h3 class="text-2xl font-bold mb-2">Standard</h3>
+            <p class="text-blue-400 font-bold mb-4">Starting @ ₹1.5/card</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li><i class="fas fa-check mr-2 text-blue-500"></i> 300 GSM Art Card</li>
+                <li><i class="fas fa-check mr-2 text-blue-500"></i> Glossy or Matte Coat</li>
+                <li><i class="fas fa-check mr-2 text-blue-500"></i> Sharp CMYK Printing</li>
+            </ul>
+            <button onclick="orderCard('Standard')" class="w-full py-3 rounded-xl border border-white/20 hover:bg-white hover:text-black font-bold transition">Choose Standard</button>
+        </div>
+
+        <div class="glass-card p-8 border-t-4 border-purple-500 card-choice relative overflow-hidden">
+            <div class="absolute top-4 right-[-35px] bg-purple-500 text-xs font-bold py-1 px-10 rotate-45">BEST SELLER</div>
+            <h3 class="text-2xl font-bold mb-2">Premium Matte</h3>
+            <p class="text-purple-400 font-bold mb-4">Starting @ ₹2.5/card</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li><i class="fas fa-check mr-2 text-purple-500"></i> 350 GSM Heavy Board</li>
+                <li><i class="fas fa-check mr-2 text-purple-500"></i> Velvet/Suede Touch</li>
+                <li><i class="fas fa-check mr-2 text-purple-500"></i> Rounded Corners Optional</li>
+            </ul>
+            <button onclick="orderCard('Premium Matte')" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 font-bold transition">Choose Premium</button>
+        </div>
+
+        <div class="glass-card p-8 border-t-4 border-amber-500 card-choice">
+            <h3 class="text-2xl font-bold mb-2">Executive Luxury</h3>
+            <p class="text-amber-500 font-bold mb-4">Custom Pricing</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li><i class="fas fa-check mr-2 text-amber-500"></i> Spot UV / Gold Foil</li>
+                <li><i class="fas fa-check mr-2 text-amber-500"></i> Textured Imported Paper</li>
+                <li><i class="fas fa-check mr-2 text-amber-500"></i> Embossed Lettering</li>
+            </ul>
+            <button onclick="orderCard('Executive Luxury')" class="w-full py-3 rounded-xl border border-amber-500/50 text-amber-500 hover:bg-amber-500 hover:text-black font-bold transition">Choose Luxury</button>
         </div>
     </div>
 </section>
 
-<footer class="bg-slate-950 pt-20 pb-10 border-t border-white/5">
-    <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-4 gap-12 mb-16">
-            <div class="col-span-1 md:col-span-2">
-                <div class="flex items-center space-x-3 mb-6">
-                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold">SS</div>
-                    <span class="text-xl font-bold">Shwet Shiva</span>
-                </div>
-                <p class="text-gray-500 max-w-sm leading-relaxed mb-8">Creating premium print identities since 2010. We combine traditional craftsmanship with modern technology.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+<section class="container mx-auto px-6 py-12">
+    <div class="glass-card p-10">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-4">Available Textures</h2>
+                <p class="text-gray-400 mb-6">We source premium papers from around the globe to ensure your card feels as good as it looks. Ask us for a physical sample kit!</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center">Linen Texture</div>
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center">Metallic Pearl</div>
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center">Kraft Eco</div>
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center">Hammer Finish</div>
                 </div>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Quick Links</h4>
-                <ul class="text-gray-500 space-y-4 text-sm">
-                    <li><a href="#" class="hover:text-blue-400 transition">Business Cards</a></li>
-                    <li><a href="#" class="hover:text-blue-400 transition">Wedding Cards</a></li>
-                    <li><a href="#" class="hover:text-blue-400 transition">Banner Printing</a></li>
-                    <li><a href="#" class="hover:text-blue-400 transition">Office Stationery</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Contact Us</h4>
-                <ul class="text-gray-500 space-y-4 text-sm">
-                    <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1 text-blue-500"></i> Kasaba Bawada, Kolhapur</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-phone text-blue-500"></i> +91 80872 20081</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-envelope text-blue-500"></i> shwetshivaprint@gmail.com</li>
-                </ul>
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/600/400?business-card" class="rounded-2xl shadow-2xl opacity-80 hover:opacity-100 transition duration-500" alt="Texture">
             </div>
         </div>
-        <div class="pt-8 border-t border-white/5 text-center text-gray-600 text-xs">
-            &copy; 2026 Shwet Shiva Printing Studios. Designed for Excellence.
+    </div>
+</section>
+
+<footer class="border-t border-gray-800 py-16 bg-black/50">
+    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-gray-400">
+        <div class="col-span-1 md:col-span-2">
+            <h4 class="text-white text-2xl font-bold mb-4">Shwet Shiva Printing</h4>
+            <p class="max-w-sm mb-6">Elevating brands through high-precision printing and innovative design solutions since 2010.</p>
+            
         </div>
+        <div>
+            <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Contact</h5>
+            <p class="text-sm mb-2">+91 80872 20081</p>
+            <p class="text-sm">infoshwetshivaprinting@gmail.com</p>
+        </div>
+        <div>
+            <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Office</h5>
+            <p class="text-sm leading-relaxed">Randive galli, Purw, Kasaba Bawada, Kolhapur, Maharashtra 416006</p>
+        </div>
+    </div>
+    <div class="text-center mt-16 text-xs text-gray-600">
+        &copy; 2026 Shwet Shiva Printing Studios. All rights reserved.
     </div>
 </footer>
 
 <script>
     function orderCard(type) {
-        const msg = `*New Business Card Inquiry*%0A---%0A*Category:* ${type}%0A*Requirement:* I am looking for premium visiting cards. Please share the design templates and price list.`;
+        const msg = `*New Business Card Inquiry*%0A---%0A*Category:* ${type}%0A*Requirement:* I am looking for premium visiting cards. Please share the design templates and price list for bulk orders.`;
         window.open(`https://wa.me/918087220081?text=${msg}`, '_blank');
     }
-
-    // Mobile Menu Toggle
-    const mobileBtn = document.getElementById('mobileBtn');
-    mobileBtn.addEventListener('click', () => {
-        // You can add logic here for mobile menu expansion
-        alert("Mobile menu clicked! (Link to your full mobile menu here)");
-    });
 </script>
 
 </body>
