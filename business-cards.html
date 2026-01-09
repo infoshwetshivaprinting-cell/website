@@ -21,7 +21,9 @@
             background-color: var(--dark-bg); 
             color: #f8fafc;
             letter-spacing: -0.01em;
+            overflow-x: hidden;
         }
+        /* Apple-style Glassmorphism */
         .glass-card {
             background: var(--glass);
             backdrop-filter: blur(12px);
@@ -42,14 +44,16 @@
         }
         .feature-icon {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.05));
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
         }
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
@@ -60,84 +64,102 @@
             <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">SS</div>
             <div>
                 <h1 class="text-xl text-white font-medium leading-none">Shwet Shiva</h1>
-                <p class="text-[10px] text-blue-400 uppercase tracking-[0.2em] mt-1">Printing Services</p>
+                <p class="text-[10px] text-blue-400 uppercase tracking-[0.2em] mt-1 font-normal">Printing Services</p>
             </div>
         </a>
+
         <div class="hidden md:flex space-x-8 text-sm text-gray-400 font-normal items-center">
             <a href="index.html" class="hover:text-white transition">Home</a>
             <div class="relative group">
-                <button class="hover:text-white flex items-center gap-1">Products <i class="fas fa-chevron-down text-[8px]"></i></button>
+                <button class="hover:text-white flex items-center gap-1 focus:outline-none">Products <i class="fas fa-chevron-down text-[8px]"></i></button>
                 <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all top-full left-0 bg-slate-800 border border-white/10 shadow-2xl rounded-2xl w-64 p-3 mt-2 grid grid-cols-1 gap-1">
-                    <a href="business-cards.html" class="p-2 hover:bg-white/5 rounded-lg text-xs">Business Cards</a>
-                    <a href="wedding-cards.html" class="p-2 hover:bg-white/5 rounded-lg text-xs">Wedding Cards</a>
+                    <a href="business-cards.html" class="p-2 hover:bg-white/5 rounded-lg text-xs font-normal">Business Cards</a>
+                    <a href="wedding-cards.html" class="p-2 hover:bg-white/5 rounded-lg text-xs font-normal">Wedding Cards</a>
+                    <a href="packaging.html" class="p-2 hover:bg-white/5 rounded-lg text-xs font-normal">Packaging</a>
                 </div>
             </div>
-            <a href="contact.html" class="bg-blue-600/10 text-blue-400 px-5 py-2 rounded-full border border-blue-600/20 hover:bg-blue-600 hover:text-white transition">Get Quote</a>
+            <a href="services.html" class="hover:text-white transition">Services</a>
+            <a href="contact.html" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Get Quote</a>
         </div>
-    </nav>
-</header>
 
+        <button id="mobileBtn" class="md:hidden text-white p-2">
+            <i class="fas fa-bars text-2xl" id="menuIcon"></i>
+        </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-900 px-6 py-8 space-y-6 absolute w-full left-0 border-t border-white/5 shadow-2xl">
+        <a href="index.html" class="block text-xl text-white font-normal">Home</a>
+        <a href="business-cards.html" class="block text-xl text-blue-400 font-normal">Business Cards</a>
+        <a href="services.html" class="block text-xl text-white font-normal">Services</a>
+        <a href="contact.html" class="block text-xl text-white font-normal">Contact</a>
+        <a href="https://wa.me/918087220081" class="block w-full bg-blue-600 text-white text-center py-4 rounded-xl font-bold">WhatsApp Us</a>
+    </div>
+</header>
 
 <section class="py-24 px-6 text-center">
     <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.3em] text-blue-500 border border-blue-500/20 rounded-full bg-blue-500/5">PROFESSIONAL IMPRESSION</span>
     <h1 class="text-5xl md:text-8xl font-extrabold mb-8 text-gradient">The Card That <br>Starts Conversations.</h1>
-    <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">We don't just print paper; we build your identity. Choose a finish that fits your brand's personality.</p>
+    <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed font-normal">We don't just print paper; we build your identity. Choose a finish that fits your brand's personality.</p>
 </section>
 
 <section class="container mx-auto px-6 mb-32">
     <div class="grid md:grid-cols-3 gap-8">
+        
         <div class="glass-card p-10 card-choice">
             <div class="feature-icon"><i class="fas fa-layer-group text-blue-500"></i></div>
-            <h3 class="text-2xl font-semibold mb-2">Standard</h3>
+            <h3 class="text-2xl font-normal mb-2">Standard</h3>
             <p class="text-gray-500 text-sm mb-6 leading-relaxed">Perfect for large events and simple networking.</p>
             <div class="text-3xl font-light mb-8">₹1.5 <span class="text-xs text-gray-500">/ card</span></div>
             <ul class="text-sm text-gray-400 space-y-4 mb-10">
-                <li class="flex items-center"><i class="fas fa-circle-check mr-3 text-blue-500/50"></i> 300 GSM Art Card</li>
-                <li class="flex items-center"><i class="fas fa-circle-check mr-3 text-blue-500/50"></i> Glossy / Matte coat</li>
+                <li class="flex items-center font-normal"><i class="fas fa-circle-check mr-3 text-blue-500/50"></i> 300 GSM Art Card</li>
+                <li class="flex items-center font-normal"><i class="fas fa-circle-check mr-3 text-blue-500/50"></i> Sharp Color Printing</li>
             </ul>
-            <button onclick="orderCard('Standard')" class="w-full py-4 rounded-2xl border border-white/10 hover:bg-white hover:text-black transition-all">Select Basic</button>
+            <button onclick="orderCard('Standard')" class="w-full py-4 rounded-2xl border border-white/10 hover:bg-white hover:text-black transition-all font-normal">Select Basic</button>
         </div>
 
-        <div class="glass-card p-10 card-choice border-t-2 border-blue-500/50 relative bg-gradient-to-b from-blue-500/5 to-transparent">
-            <div class="absolute top-6 right-8 px-3 py-1 bg-blue-600 rounded-full text-[10px] font-bold">MOST POPULAR</div>
+        <div class="glass-card p-10 card-choice border-t-2 border-blue-500 relative bg-gradient-to-b from-blue-500/5 to-transparent">
+            <div class="absolute top-6 right-8 px-3 py-1 bg-blue-600 rounded-full text-[10px] font-bold tracking-tighter">POPULAR</div>
             <div class="feature-icon"><i class="fas fa-crown text-blue-400"></i></div>
-            <h3 class="text-2xl font-semibold mb-2">Premium Matte</h3>
+            <h3 class="text-2xl font-normal mb-2 text-white">Premium Matte</h3>
             <p class="text-gray-500 text-sm mb-6 leading-relaxed">A soft-touch feel that stays in people's minds.</p>
             <div class="text-3xl font-light mb-8">₹2.5 <span class="text-xs text-gray-500">/ card</span></div>
             <ul class="text-sm text-gray-400 space-y-4 mb-10">
-                <li class="flex items-center"><i class="fas fa-circle-check mr-3 text-blue-500"></i> 350 GSM Velvet Board</li>
-                <li class="flex items-center"><i class="fas fa-circle-check mr-3 text-blue-500"></i> Anti-scratch finish</li>
+                <li class="flex items-center font-normal"><i class="fas fa-circle-check mr-3 text-blue-500"></i> 350 GSM Velvet Board</li>
+                <li class="flex items-center font-normal"><i class="fas fa-circle-check mr-3 text-blue-500"></i> Anti-scratch finish</li>
             </ul>
-            <button onclick="orderCard('Premium Matte')" class="w-full py-4 rounded-2xl bg-blue-600 text-white hover:bg-blue-700 shadow-xl shadow-blue-600/20 transition-all">Get Premium</button>
+            <button onclick="orderCard('Premium Matte')" class="w-full py-4 rounded-2xl bg-blue-600 text-white hover:bg-blue-700 shadow-xl shadow-blue-600/20 transition-all font-normal">Get Premium</button>
         </div>
 
         <div class="glass-card p-10 card-choice">
             <div class="feature-icon"><i class="fas fa-gem text-amber-500"></i></div>
-            <h3 class="text-2xl font-semibold mb-2">Executive</h3>
+            <h3 class="text-2xl font-normal mb-2">Executive Luxury</h3>
             <p class="text-gray-500 text-sm mb-6 leading-relaxed">The ultimate statement for high-end brands.</p>
-            <div class="text-3xl font-light mb-8">Custom <span class="text-xs text-gray-500">Quote</span></div>
+            <div class="text-3xl font-light mb-8">Quote <span class="text-xs text-gray-500">on call</span></div>
             <ul class="text-sm text-gray-400 space-y-4 mb-10">
-                <li class="flex items-center"><i class="fas fa-circle-check mr-3 text-amber-500/50"></i> Gold Foil / Spot UV</li>
-                <li class="flex items-center"><i class="fas fa-circle-check mr-3 text-amber-500/50"></i> Textured Import Paper</li>
+                <li class="flex items-center font-normal"><i class="fas fa-circle-check mr-3 text-amber-500/50"></i> Gold Foil / Spot UV</li>
+                <li class="flex items-center font-normal"><i class="fas fa-circle-check mr-3 text-amber-500/50"></i> Textured Import Paper</li>
             </ul>
-            <button onclick="orderCard('Executive Luxury')" class="w-full py-4 rounded-2xl border border-amber-500/30 text-amber-500 hover:bg-amber-500 hover:text-black transition-all">Talk to Designer</button>
+            <button onclick="orderCard('Executive Luxury')" class="w-full py-4 rounded-2xl border border-amber-500/30 text-amber-500 hover:bg-amber-500 hover:text-black transition-all font-normal">Talk to Designer</button>
         </div>
     </div>
 </section>
+
 
 <section class="container mx-auto px-6 mb-32">
     <div class="glass-card overflow-hidden">
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 p-12 md:p-20">
-                <h2 class="text-4xl font-bold mb-6">Touch the Quality.</h2>
-                <p class="text-gray-400 mb-8 leading-relaxed text-lg">We use imported papers with unique textures like Linen, Silk, and Kraft. Every card feels like a piece of art.</p>
+                <h2 class="text-4xl font-normal mb-6">Touch the Quality.</h2>
+                <p class="text-gray-400 mb-8 leading-relaxed text-lg font-normal">We use imported papers with unique textures like Linen, Silk, and Kraft. Every card feels like a piece of art.</p>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center text-sm">Linen Finish</div>
-                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center text-sm">Metallic Pearl</div>
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center text-sm font-normal">Linen Finish</div>
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center text-sm font-normal">Metallic Pearl</div>
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center text-sm font-normal">Hammered</div>
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center text-sm font-normal">Soft Touch</div>
                 </div>
             </div>
             <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=800" class="h-full w-full object-cover" alt="Texture samples">
+                <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=800" class="h-full w-full object-cover opacity-80" alt="Texture">
             </div>
         </div>
     </div>
@@ -146,30 +168,46 @@
 <footer class="bg-black/50 py-20 px-6 border-t border-white/5">
     <div class="container mx-auto grid md:grid-cols-2 gap-12">
         <div>
-            <h4 class="text-2xl font-bold mb-6">Shwet Shiva Printing</h4>
-            <p class="text-gray-500 max-w-sm">Crafting premium print experiences for Kolhapur's finest brands since 2010.</p>
+            <h4 class="text-2xl font-normal mb-6 text-white">Shwet Shiva Printing</h4>
+            <p class="text-gray-500 max-w-sm font-normal">Crafting premium print experiences for Kolhapur's finest brands since 2010.</p>
         </div>
         <div class="grid grid-cols-2 gap-8">
             <div>
                 <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest block mb-4">Contact</span>
-                <p class="text-sm text-gray-400">+91 80872 20081</p>
+                <p class="text-sm text-gray-400 font-normal">+91 80872 20081</p>
             </div>
             <div>
-                <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest block mb-4">Visit</span>
-                <p class="text-sm text-gray-400 leading-relaxed">Kasaba Bawada, Kolhapur</p>
+                <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest block mb-4">Address</span>
+                <p class="text-sm text-gray-400 leading-relaxed font-normal">Kasaba Bawada, Kolhapur</p>
             </div>
         </div>
-    </div>
-    <div class="text-center mt-20 pt-10 border-t border-white/5 text-xs text-gray-600">
-        &copy; 2026 Shwet Shiva Printing Studios.
     </div>
 </footer>
 
 <script>
+    // Navigation Toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mobileBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.replace(isHidden ? 'fa-times' : 'fa-bars', isHidden ? 'fa-bars' : 'fa-times');
+    });
+
+    // WhatsApp Integration
     function orderCard(type) {
-        const msg = `*Inquiry:* Premium Business Cards%0A*Type:* ${type}%0A---%0AI saw your website and want to see some samples.`;
+        const msg = `*Inquiry:* Business Cards%0A*Style:* ${type}%0A---%0AHi, I saw your premium cards online. Can you show me some design samples?`;
         window.open(`https://wa.me/918087220081?text=${msg}`, '_blank');
     }
+
+    // Auto-close menu on resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
 </script>
 
 </body>
