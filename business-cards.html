@@ -261,30 +261,37 @@
         const msg = `*Inquiry: Business Cards*%0A---%0A*Type:* ${type}%0A*Requirement:* I am interested in ${type} business cards. Please share samples and bulk pricing.`;
         window.open(`https://wa.me/918087220081?text=${msg}`, '_blank');
     }
-    
- 
-    const mobileBtn = document.getElementById('mobileBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileBtn = document.getElementById('mobileBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
 
-    mobileBtn.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.toggle('hidden');
-        if (isHidden) {
-            menuIcon.classList.replace('fa-times', 'fa-bars');
-            document.body.style.overflow = 'auto';
-        } else {
-            menuIcon.classList.replace('fa-bars', 'fa-times');
-            document.body.style.overflow = 'hidden';
+        if(mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                
+                if (isHidden) {
+                    menuIcon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = 'auto';
+                } else {
+                    menuIcon.classList.replace('fa-bars', 'fa-times');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+
+            // Close menu if user clicks a link
+            const links = mobileMenu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = 'auto';
+                });
+            });
         }
     });
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.replace('fa-times', 'fa-bars');
-            document.body.style.overflow = 'auto';
-        }
-    });
 
 </script>
 
